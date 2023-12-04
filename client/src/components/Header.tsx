@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Navbar } from "./Navbar";
+import { NavLink } from "react-router-dom";
 
 const HeaderContainer = styled.div``;
 
@@ -14,15 +15,23 @@ const StoreInfoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: #9a9a9a;
 `;
 
 const StoreInfoText = styled.p`
-  color: black;
+  padding: 0.5rem;
 `;
 
-const StoreInfoLink = styled.a``;
+const StoreInfoLink = styled.a`
+  text-decoration: 0;
+  color: #9a9a9a;
+`;
 
-const StoreLogo = styled.p``;
+const StoreLogo = styled(NavLink)`
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+`;
 
 export const Header = () => {
   return (
@@ -38,7 +47,7 @@ export const Header = () => {
 
       {/* Navbar */}
       <NavbarContainer>
-        <StoreLogo>ELEGANT NAILS & SPA</StoreLogo>
+        <StoreLogo to={"/"}>ELEGANT NAILS & SPA</StoreLogo>
         <Navbar />
       </NavbarContainer>
     </HeaderContainer>
