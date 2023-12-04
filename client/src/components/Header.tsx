@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Navbar } from "./Navbar";
 import { NavLink } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
+import { HamburgerMenu } from "./HamburgerMenu";
+
+interface HeaderProps {
+  setIsHamburgerOpen: Dispatch<SetStateAction<boolean>>;
+}
 
 const HeaderContainer = styled.div``;
 
@@ -32,8 +38,14 @@ const StoreLogo = styled(NavLink)`
   font-size: 2rem;
   color: black;
 `;
+// const HamburgerMenu = styled.svg`
+//   display: none;
+//   @media screen and (max-width: 768px) {
+//     display: block;
+//   }
+// `;
+export const Header = ({ setIsHamburgerOpen }: HeaderProps) => {
 
-export const Header = () => {
   return (
     <HeaderContainer>
       {/* Displays store information */}
@@ -47,8 +59,10 @@ export const Header = () => {
 
       {/* Navbar */}
       <NavbarContainer>
+        <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
         <StoreLogo to={"/"}>ELEGANT NAILS & SPA</StoreLogo>
         <Navbar />
+        {/* <MobileNavbar /> */}
       </NavbarContainer>
     </HeaderContainer>
   );
