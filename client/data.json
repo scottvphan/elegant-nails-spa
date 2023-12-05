@@ -1,0 +1,332 @@
+{
+  "services": [
+    {
+      "name": "Acrylic Nails",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 35
+        },
+        {
+          "type": "Fill In",
+          "price": 25
+        }
+      ]
+    },
+    {
+      "name": "Gel Nails (Liquid)",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 55
+        },
+        {
+          "type": "Fill In",
+          "price": 35
+        }
+      ]
+    },
+    {
+      "name": "Take Off New Set",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 40
+        }
+      ]
+    },
+    {
+      "name": "Dipping Powder",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 40
+        }
+      ]
+    },
+    {
+      "name": "Pink & White Nails",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Ombre",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 55
+        }
+      ]
+    },
+    {
+      "name": "Spa Pedicure & Manicure",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 65
+        }
+      ]
+    },
+    {
+      "name": "Manicure",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Spa Pedicure",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Manicure With Gel Polish",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 30
+        }
+      ]
+    },
+    {
+      "name": "Pedicure With Gel Polish",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 45
+        }
+      ]
+    },
+    {
+      "name": "Pedicure",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 30
+        }
+      ]
+    },
+    {
+      "name": "Nails Art Design",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nail Cut Down",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nails Removal",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 10
+        }
+      ]
+    },
+    {
+      "name": "Nail Repair Per Nail",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nail Polish Change French",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Acrylic take off and Manicure",
+      "options": [
+        {
+          "type": "Full Set",
+          "price": 25
+        }
+      ]
+    }
+  ],
+  "polish": [
+    {
+      "name": "Hands",
+      "options": [
+        {
+          "price": 10
+        }
+      ]
+    },
+    {
+      "name": "Toes",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Gel Polish Change",
+      "options": [
+        {
+          "price": 20
+        }
+      ]
+    },
+    {
+      "name": "Gel Polish(Toes)",
+      "options": [
+        {
+          "price": 25
+        }
+      ]
+    }
+  ],
+  "waxing": [
+    {
+      "name": "Eyebrows",
+      "options": [
+        {
+          "price": 8
+        }
+      ]
+    },
+    {
+      "name": "Chin",
+      "options": [
+        {
+          "price": 8
+        }
+      ]
+    },
+    {
+      "name": "Lip",
+      "options": [
+        {
+          "price": 7
+        }
+      ]
+    },
+    {
+      "name": "Half Legs",
+      "options": [
+        {
+          "price": 35
+        }
+      ]
+    },
+    {
+      "name": "Underarms",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Full Arms",
+      "options": [
+        {
+          "price": 35
+        }
+      ]
+    },
+    {
+      "name": "Full Legs",
+      "options": [
+        {
+          "price": 60
+        }
+      ]
+    }
+  ],
+  "kids": [
+    {
+      "name": "Manicure",
+      "options": [
+        {
+          "price": 10
+        }
+      ]
+    },
+    {
+      "name": "Pedicure",
+      "options": [
+        {
+          "price": 25
+        }
+      ]
+    },
+    {
+      "name": "Gel Manicure",
+      "options": [
+        {
+          "price": 25
+        }
+      ]
+    },
+    {
+      "name": "Gel Pedicure",
+      "options": [
+        {
+          "price": 35
+        }
+      ]
+    },
+    {
+      "name": "Nails polish change",
+      "options": [
+        {
+          "price": 5
+        }
+      ]
+    },
+    {
+      "name": "Toe polish change",
+      "options": [
+        {
+          "price": 10
+        }
+      ]
+    },
+    {
+      "name": "Gel polish change",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Gel polish change",
+      "options": [
+        {
+          "price": 20
+        }
+      ]
+    }
+  ]
+}
