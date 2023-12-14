@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Dispatch, SetStateAction } from "react";
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -49,9 +50,17 @@ const DropdownItem = styled(NavLink)`
   }
 `;
 
-export const Navbar = () => {
+interface HeaderProps {
+  setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const handleAppointmentModal = () => {
+    setIsAppointmentOpen((prevState: boolean) => !prevState);
+  };
+  
   return (
     <NavbarContainer>
       <StyledNavLink to="/">HOME</StyledNavLink>
@@ -81,7 +90,7 @@ export const Navbar = () => {
         </ServicesDropdown>
       </ServicesContainer>
       <StyledNavLink to="/contact">CONTACT</StyledNavLink>
-      <BookButton>BOOK NOW</BookButton>
+      <BookButton onClick={handleAppointmentModal}>BOOK NOW</BookButton>
     </NavbarContainer>
   );
 };
