@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { useOutletContext } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
+import Carousel from "react-multi-carousel";
+import 'react-multi-carousel/lib/styles.css';
+
+import NailsOne from "../assets/carousel/nails-image-1.jpg"
+import NailsTwo from "../assets/carousel/nails-image-2.jpg"
+import NailsThree from "../assets/carousel/nails-image-3.jpg"
+import NailsFour from "../assets/carousel/nails-image-4.jpg"
+import NailsFive from "../assets/carousel/nails-image-5.jpg"
 
 const HomeContainer = styled.div``;
 
@@ -28,6 +36,16 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `;
 
+const ImgContainer = styled.div`
+  padding: 1rem;
+  height: 100%;
+`
+
+const StyledImg = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
 interface HomeProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 } 
@@ -54,6 +72,73 @@ export const Home = () => {
         environment. At Elegant Nails & Spa, you are part of our family and our
         community.
       </WelcomeMessage>
+
+      <Carousel
+        additionalTransfrom={0}
+        autoPlaySpeed={3000}
+        centerMode={true}
+        className=""
+        containerClass="container-with-dots"
+        draggable
+        focusOnSelect={false}
+        infinite
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024
+            },
+            items: 3,
+            partialVisibilityGutter: 40
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0
+            },
+            items: 1,
+            partialVisibilityGutter: 30
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464
+            },
+            items: 2,
+            partialVisibilityGutter: 30
+          }
+        }}
+        rtl={false}
+        showDots={false}
+        slidesToSlide={1}
+        swipeable
+      >
+        <ImgContainer>
+          <StyledImg src={NailsOne} />
+        </ImgContainer>
+        
+        <ImgContainer>
+          <StyledImg src={NailsTwo} />
+        </ImgContainer>
+
+        <ImgContainer>
+          <StyledImg src={NailsThree} />
+        </ImgContainer>
+
+        <ImgContainer>
+          <StyledImg src={NailsFour} />
+        </ImgContainer>
+
+        <ImgContainer>
+          <StyledImg src={NailsFive} />
+        </ImgContainer>
+      </Carousel>
 
       {/* Carousel */}
       <ButtonContainer>
