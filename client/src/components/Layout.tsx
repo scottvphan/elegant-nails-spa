@@ -44,7 +44,7 @@ export const Layout = () => {
         setIsHamburgerOpen={setIsHamburgerOpen}
         setIsAppointmentOpen={setIsAppointmentOpen}
       />
-      <Outlet />
+      <Outlet context={{setIsAppointmentOpen}} />
       <Footer />
     </LayoutContainer>
   );
