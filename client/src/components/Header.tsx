@@ -6,6 +6,7 @@ import { HamburgerMenu } from "./HamburgerMenu";
 
 interface HeaderProps {
   setIsHamburgerOpen: Dispatch<SetStateAction<boolean>>;
+  setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const HeaderContainer = styled.div``;
@@ -44,7 +45,7 @@ const StoreLogo = styled(NavLink)`
 //     display: block;
 //   }
 // `;
-export const Header = ({ setIsHamburgerOpen }: HeaderProps) => {
+export const Header = ({ setIsHamburgerOpen, setIsAppointmentOpen }: HeaderProps) => {
 
   return (
     <HeaderContainer>
@@ -61,7 +62,7 @@ export const Header = ({ setIsHamburgerOpen }: HeaderProps) => {
       <NavbarContainer>
         <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
         <StoreLogo to={"/"}>ELEGANT NAILS & SPA</StoreLogo>
-        <Navbar />
+        <Navbar setIsAppointmentOpen={setIsAppointmentOpen} />
         {/* <MobileNavbar /> */}
       </NavbarContainer>
     </HeaderContainer>
