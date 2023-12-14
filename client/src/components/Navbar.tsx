@@ -10,6 +10,7 @@ const NavbarContainer = styled.div`
   @media screen and (max-width:768px) {
     display: none;
   }
+  padding: 1rem;
 `;
 
 const ServicesContainer = styled.div`
