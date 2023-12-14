@@ -9,12 +9,15 @@ interface HeaderProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const HeaderContainer = styled.div``;
+const HeaderContainer = styled.div`
+`;
 
 const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
 const StoreInfoContainer = styled.div`
@@ -26,7 +29,7 @@ const StoreInfoContainer = styled.div`
 `;
 
 const StoreInfoText = styled.p`
-  padding: 0.5rem;
+  padding: 1rem;
 `;
 
 const StoreInfoLink = styled.a`

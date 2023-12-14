@@ -10,7 +10,7 @@ const FooterContainer = styled.footer`
     display: flex;
     gap: 1rem;
     justify-content: space-between;
-    padding: 2rem 10rem;
+    padding: 2rem 6rem;
   }
   /* tablet screens */
   @media screen and (min-width: 768px) and (max-width: 1023px) {

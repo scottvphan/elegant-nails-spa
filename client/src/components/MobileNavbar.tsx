@@ -22,7 +22,6 @@ const MobileNavbarContainer = styled.div`
   width: 100vw;
   position: fixed;
   justify-content:space-between;
-  border:1px solid red;
   overflow-y: auto;
 `;
 
