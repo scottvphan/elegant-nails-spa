@@ -10,15 +10,37 @@ import NailsThree from "../assets/carousel/nails-image-3.jpg"
 import NailsFour from "../assets/carousel/nails-image-4.jpg"
 import NailsFive from "../assets/carousel/nails-image-5.jpg"
 
+import BackgroundOne from "../assets/background/background-image-1.png"
+import BackgroundTwo from "../assets/background/background-image-2.jpg"
+
 const HomeContainer = styled.div``;
 
 const HeroSection = styled.div`
   text-align: center;
+  background-image: url(${BackgroundOne});
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  min-height: 40rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Heading = styled.p``;
+const DarkContainer = styled.div`
+  background-color: rgba(0, 0, 0, 0.2);
+  max-width: 60rem;
+  height: 100%;
+`
 
-const Subheading = styled.p``;
+const Heading = styled.p`
+  font-size: 4rem;
+`;
+
+const Subheading = styled.p`
+  font-size: 1.5rem;
+`;
 
 const WelcomeMessage = styled.p`
   text-align: center;
@@ -36,9 +58,16 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `;
 
-const ImgContainer = styled.div`
+const CarouselContainer = styled.div`
   padding: 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
+`
+
+const ImgContainer = styled.div`
+  padding: 0.5rem;
   height: 100%;
+  width: 100%;
 `
 
 const StyledImg = styled.img`
@@ -49,6 +78,34 @@ const StyledImg = styled.img`
 interface HomeProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 } 
+
+const responsive = {
+  desktop: {
+    breakpoint: {
+      max: 3000,
+      min: 1024
+    },
+    items: 3,
+    partialVisibilityGutter: 40
+  },
+  mobile: {
+    breakpoint: {
+      max: 464,
+      min: 0
+    },
+    items: 1,
+    partialVisibilityGutter: 30
+  },
+  tablet: {
+    breakpoint: {
+      max: 1024,
+      min: 464
+    },
+    items: 2,
+    partialVisibilityGutter: 30
+  }
+}
+
 export const Home = () => {
   const { setIsAppointmentOpen }:HomeProps = useOutletContext();
 
@@ -60,10 +117,12 @@ export const Home = () => {
     <HomeContainer>
       {/* Hero Section */}
       <HeroSection>
-        <Heading>Welcome to Elegant Nails & Spa</Heading>
-        <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
-        <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
-        <Subheading>Sunday: Closed</Subheading>
+        <DarkContainer>
+          <Heading>Welcome to Elegant Nails & Spa</Heading>
+          <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
+          <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
+          <Subheading>Sunday: Closed</Subheading>
+        </DarkContainer>
       </HeroSection>
 
       <WelcomeMessage>
@@ -73,74 +132,51 @@ export const Home = () => {
         community.
       </WelcomeMessage>
 
-      <Carousel
-        additionalTransfrom={0}
-        autoPlaySpeed={3000}
-        centerMode={true}
-        className=""
-        containerClass="container-with-dots"
-        draggable
-        focusOnSelect={false}
-        infinite
-        keyBoardControl
-        minimumTouchDrag={80}
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024
-            },
-            items: 3,
-            partialVisibilityGutter: 40
-          },
-          mobile: {
-            breakpoint: {
-              max: 464,
-              min: 0
-            },
-            items: 1,
-            partialVisibilityGutter: 30
-          },
-          tablet: {
-            breakpoint: {
-              max: 1024,
-              min: 464
-            },
-            items: 2,
-            partialVisibilityGutter: 30
-          }
-        }}
-        rtl={false}
-        showDots={false}
-        slidesToSlide={1}
-        swipeable
-      >
-        <ImgContainer>
-          <StyledImg src={NailsOne} />
-        </ImgContainer>
-        
-        <ImgContainer>
-          <StyledImg src={NailsTwo} />
-        </ImgContainer>
+      <CarouselContainer>
+        <Carousel
+          additionalTransfrom={0}
+          centerMode={true}
+          className=""
+          containerClass="react-multi-carousel-list"
+          draggable={false}
+          focusOnSelect={false}
+          infinite
+          itemClass="carousel-item-padding-40-px"
+          keyBoardControl
+          minimumTouchDrag={80}
+          pauseOnHover
+          renderArrowsWhenDisabled={false}
+          renderButtonGroupOutside={false}
+          renderDotsOutside={false}
+          responsive={responsive}
+          rtl={false}
+          showDots={false}
+          slidesToSlide={1}
+          swipeable
+        >
+          <ImgContainer>
+            <StyledImg src={NailsOne} />
+          </ImgContainer>
+          
+          <ImgContainer>
+            <StyledImg src={NailsTwo} />
+          </ImgContainer>
 
-        <ImgContainer>
-          <StyledImg src={NailsThree} />
-        </ImgContainer>
+          <ImgContainer>
+            <StyledImg src={NailsThree} />
+          </ImgContainer>
 
-        <ImgContainer>
-          <StyledImg src={NailsFour} />
-        </ImgContainer>
+          <ImgContainer>
+            <StyledImg src={NailsFour} />
+          </ImgContainer>
 
-        <ImgContainer>
-          <StyledImg src={NailsFive} />
-        </ImgContainer>
-      </Carousel>
+          <ImgContainer>
+            <StyledImg src={NailsFive} />
+          </ImgContainer>
+        </Carousel>
+      </CarouselContainer>
 
-      {/* Carousel */}
+      {/* Book Button */}
       <ButtonContainer>
         <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
       </ButtonContainer>
