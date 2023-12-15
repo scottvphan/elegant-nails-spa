@@ -43,7 +43,6 @@ const ServicePrice = styled.h6`
 `;
 
 export const ServicesComponent = (data: any) => {
-  console.log(data);
 
   return (
     <>
