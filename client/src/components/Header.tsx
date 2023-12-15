@@ -9,7 +9,11 @@ interface HeaderProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const HeaderContainer = styled.div`
+const StickyContainer = styled.div`
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
 `;
 
 const NavbarContainer = styled.div`
@@ -18,6 +22,13 @@ const NavbarContainer = styled.div`
   align-items: center;
   padding: 1rem;
   box-sizing: border-box;
+  /* laptop & desktop padding */
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0rem 6rem;
+  }
 `;
 
 const StoreInfoContainer = styled.div`
@@ -26,6 +37,13 @@ const StoreInfoContainer = styled.div`
   align-items: center;
   gap: 1rem;
   color: #9a9a9a;
+  /* laptop & desktop padding */
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0rem 6rem;
+  }
 `;
 
 const StoreInfoText = styled.p`
@@ -42,17 +60,14 @@ const StoreLogo = styled(NavLink)`
   font-size: 2rem;
   color: black;
 `;
-// const HamburgerMenu = styled.svg`
-//   display: none;
-//   @media screen and (max-width: 768px) {
-//     display: block;
-//   }
-// `;
-export const Header = ({ setIsHamburgerOpen, setIsAppointmentOpen }: HeaderProps) => {
 
+export const Header = ({
+  setIsHamburgerOpen,
+  setIsAppointmentOpen,
+}: HeaderProps) => {
   return (
-    <HeaderContainer>
-      {/* Displays store information */}
+    <>
+      {/* Non-sticky part */}
       <StoreInfoContainer>
         <StoreInfoText>
           Mon - Fri 9:30AM - 7:00PM / Saturday 9:00AM - 6PM
@@ -61,13 +76,14 @@ export const Header = ({ setIsHamburgerOpen, setIsAppointmentOpen }: HeaderProps
         <StoreInfoText>407 Baltimore Pike, Morton, PA 19070</StoreInfoText>
       </StoreInfoContainer>
 
-      {/* Navbar */}
-      <NavbarContainer>
-        <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
-        <StoreLogo to={"/"}>ELEGANT NAILS & SPA</StoreLogo>
-        <Navbar setIsAppointmentOpen={setIsAppointmentOpen} />
-        {/* <MobileNavbar /> */}
-      </NavbarContainer>
-    </HeaderContainer>
+      {/* Sticky navbar */}
+      <StickyContainer>
+        <NavbarContainer>
+          <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
+          <StoreLogo to={"/"}>ELEGANT NAILS & SPA</StoreLogo>
+          <Navbar setIsAppointmentOpen={setIsAppointmentOpen} />
+        </NavbarContainer>
+      </StickyContainer>
+    </>
   );
 };
