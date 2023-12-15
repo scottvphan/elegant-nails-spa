@@ -11,7 +11,7 @@ import NailsFour from "../assets/carousel/nails-image-4.jpg";
 import NailsFive from "../assets/carousel/nails-image-5.jpg";
 
 import BackgroundOne from "../assets/background/background-image-1.png";
-import BackgroundTwo from "../assets/background/background-image-2.jpg";
+// import BackgroundTwo from "../assets/background/background-image-2.jpg";
 
 const HomeContainer = styled.div`
   /* for laptop and desktop screens  */
@@ -50,6 +50,15 @@ const Heading = styled.p`
   font-size: 4rem;
 `;
 
+const Cursive = styled.p`
+  font-family: 'Mr De Haviland', cursive;
+  
+`
+
+const ColoredCursive = styled(Cursive)`
+  color: #f9b698;
+`
+
 const Subheading = styled.p`
   font-size: 1.5rem;
 `;
@@ -58,6 +67,8 @@ const WelcomeMessage = styled.p`
   text-align: center;
   max-width: 60rem;
   margin: 0 auto;
+  font-size: 1.5rem;
+  color: #757575;
 `;
 
 const StyledButton = styled.button`
@@ -135,7 +146,10 @@ export const Home = () => {
       {/* Hero Section */}
       <HeroSection>
         <DarkContainer>
-          <Heading>Welcome to Elegant Nails & Spa</Heading>
+          <Heading>
+            <Cursive>Welcome to </Cursive>
+            Elegant Nails & Spa
+          </Heading>
           <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
           <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
           <Subheading>Sunday: Closed</Subheading>
@@ -147,6 +161,10 @@ export const Home = () => {
       </HeroSection>
 
       <WelcomeMessage>
+        <Heading>
+          <ColoredCursive>Welcome to </ColoredCursive> 
+          Elegant Nails & Spa
+        </Heading>
         From the minute you step in our salon to the minute you step out, you’ll
         be provided with excellent service and comfort in a relaxing
         environment. At Elegant Nails & Spa, you are part of our family and our
