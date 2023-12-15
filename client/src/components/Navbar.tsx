@@ -23,14 +23,35 @@ const ServicesDropdown = styled.div`
   background-color: #e3e3e3;
   flex-direction: column;
   gap: 0.5rem;
+  top: 2.75rem;
 `;
 
 const StyledNavLink = styled(NavLink)`
   color: #323232;
   text-decoration: 0;
   padding: 0.3125rem 1.375rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    color: #f9b698;
+    position: absolute;
+    width: 75%;
+    height: 3px;
+    left: 12.5%;
+    bottom: 0;
+    background-color: #f3f3f3;
+    transform-origin: right;
+    transition: background-color 0.5s ease-out;
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    background-color: #f9b698;
+  }
 
   &:hover {
+    transition: color 0.5s ease-out;
     color: #f9b698;
   }
 `;
@@ -76,7 +97,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
           <DropdownItem to={"/services#manicure"}>
             MANICURE
           </DropdownItem>
-          <DropdownItem to={"/services#manicure"}>
+          <DropdownItem to={"/services#pedicure"}>
             PEDICURE
           </DropdownItem>
           <DropdownItem to={"/services#kid-services"}>
