@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ModalContainer = styled.div`
   background-color: #fff;
-  /* padding: 1.5rem; */
+  padding: 1.5rem;
   min-width: 50%;
   max-height: 70%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
