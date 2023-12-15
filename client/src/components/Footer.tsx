@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import FacebookIcon from "../assets/logo/facebook.svg"
 
 const FooterContainer = styled.footer`
   background-color: #212121;
@@ -77,6 +78,8 @@ const LinkContainer = styled.div`
 const StyledNavLink = styled(NavLink)`
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
   &:active {
     text-decoration: none;
     color: white;
@@ -86,6 +89,10 @@ const GetInTouchContainer = styled.div`
   /* git is short for get in touch */
   grid-area: git;
 `;
+
+const StyledIcon = styled.img`
+  width: 1.5rem;
+`
 
 const CopyrightContainer = styled.div`
   width: 100%;
@@ -104,7 +111,6 @@ const CopyrightText = styled.p`
 export const Footer = () => {
   return (
     <>
-
       <FooterContainer>
         <FooterMessage>
           Thank you for visiting Elegant Nails & Spa online. If this is your first
@@ -133,6 +139,7 @@ export const Footer = () => {
           <StyledNavLink
             to={"https://m.facebook.com/profile.php?id=155017304535547"}
           >
+            <StyledIcon src={FacebookIcon} />
             Facebook
           </StyledNavLink>
         </GetInTouchContainer>
