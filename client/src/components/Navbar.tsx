@@ -7,14 +7,17 @@ const NavbarContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  padding: 1rem;
+  
   @media screen and (max-width:768px) {
     display: none;
   }
-  padding: 1rem;
 `;
 
 const ServicesContainer = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 const ServicesDropdown = styled.div`
@@ -103,7 +106,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
           <DropdownItem to={"/services#kid-services"}>
             KID SERVICES
           </DropdownItem>
-          <DropdownItem to={"/services#bosy-waxing"}>
+          <DropdownItem to={"/services#body-waxing"}>
             BODY WAXING
           </DropdownItem>
           <DropdownItem to={"/services#additional-services"}>
