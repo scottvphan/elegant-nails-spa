@@ -6,9 +6,7 @@ import { useState } from "react";
 import { MobileNavbar } from "./MobileNavbar";
 import AppointmentModal from "./AppointmentModal";
 
-const LayoutContainer = styled.div`
-
-`;
+const LayoutContainer = styled.div``;
 const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
@@ -19,7 +17,7 @@ const ModalBackdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 9999;
 `;
 export const Layout = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
@@ -44,7 +42,7 @@ export const Layout = () => {
         setIsHamburgerOpen={setIsHamburgerOpen}
         setIsAppointmentOpen={setIsAppointmentOpen}
       />
-      <Outlet context={{setIsAppointmentOpen}} />
+      <Outlet context={{ setIsAppointmentOpen }} />
       <Footer />
     </LayoutContainer>
   );
