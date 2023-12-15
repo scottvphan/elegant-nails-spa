@@ -12,6 +12,7 @@ import NailsFive from "../assets/carousel/nails-image-5.jpg";
 
 import BackgroundOne from "../assets/background/background-image-1.png";
 import BackgroundTwo from "../assets/background/background-image-2.jpg";
+import { GoogleReviews } from "../components/GoogleReviews";
 
 const HomeContainer = styled.div`
   /* for laptop and desktop screens  */
@@ -196,6 +197,7 @@ export const Home = () => {
           </ImgContainer>
         </Carousel>
       </CarouselContainer>
+      <GoogleReviews />
     </HomeContainer>
   );
 };
