@@ -32,7 +32,7 @@ const NavbarContainer = styled.div`
 `;
 
 const StoreInfoContainer = styled.div`
-  background-color: #eff5ff;
+  background-color: #f8f8f8;
   display: flex;
   align-items: center;
   gap: 1rem;

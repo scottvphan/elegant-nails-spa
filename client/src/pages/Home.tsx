@@ -43,6 +43,7 @@ const DarkContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   max-width: 60rem;
   height: 100%;
+  padding: 1rem;
 `;
 
 const Heading = styled.p`
@@ -55,6 +56,8 @@ const Subheading = styled.p`
 
 const WelcomeMessage = styled.p`
   text-align: center;
+  max-width: 60rem;
+  margin: 0 auto;
 `;
 
 const StyledButton = styled.button`
@@ -69,7 +72,7 @@ const StyledButton = styled.button`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  width:20%;
+  width: 20%;
 `;
 
 const CarouselContainer = styled.div`
