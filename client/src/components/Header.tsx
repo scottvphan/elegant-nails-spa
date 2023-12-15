@@ -13,7 +13,7 @@ const StickyContainer = styled.div`
   position: sticky;
   top: 0;
   background-color: white;
-  z-index: 100;
+  z-index: 10000;
 `;
 
 const NavbarContainer = styled.div`
@@ -32,10 +32,12 @@ const NavbarContainer = styled.div`
 `;
 
 const StoreInfoContainer = styled.div`
+  position:relative;
   background-color: #eff5ff;
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 10000;
   color: #9a9a9a;
   /* laptop & desktop padding */
   @media screen and (min-width: 1024px) {
@@ -45,6 +47,7 @@ const StoreInfoContainer = styled.div`
     padding: 0rem 6rem;
   }
 `;
+
 
 const StoreInfoText = styled.p`
   padding: 1rem;
