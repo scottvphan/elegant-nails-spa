@@ -33,6 +33,10 @@ function App() {
     img{
         user-select: none;
     }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
     `;
   const router = createBrowserRouter(
     createRoutesFromElements(
