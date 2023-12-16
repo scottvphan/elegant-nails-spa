@@ -88,6 +88,9 @@ const StyledNavLink = styled(NavLink)`
 const GetInTouchContainer = styled.div`
   /* git is short for get in touch */
   grid-area: git;
+  display:flex;
+  flex-direction: column;
+  gap:1rem;
 `;
 
 const StyledIcon = styled.img`
@@ -106,6 +109,9 @@ const CopyrightContainer = styled.div`
 
 const CopyrightText = styled.p`
   color: #9a9a9a;
+`
+const StyledGoogleMap = styled.iframe`
+  height:100%;
 `
 
 export const Footer = () => {
@@ -142,6 +148,11 @@ export const Footer = () => {
             <StyledIcon src={FacebookIcon} />
             Facebook
           </StyledNavLink>
+          <StyledGoogleMap
+            loading="lazy"
+            // allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrby6QnLCxokRcMXea-IIlVk&key=AIzaSyBBW2F1HMcu3yJ1wG2sHo4eRoelcb2jlVY"
+          ></StyledGoogleMap>
         </GetInTouchContainer>
       </FooterContainer>
 
