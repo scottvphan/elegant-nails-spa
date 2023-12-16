@@ -7,14 +7,17 @@ const NavbarContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  padding: 1rem;
+  
   @media screen and (max-width:768px) {
     display: none;
   }
-  padding: 1rem;
 `;
 
 const ServicesContainer = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
 const ServicesDropdown = styled.div`
@@ -36,9 +39,9 @@ const StyledNavLink = styled(NavLink)`
     content: "";
     color: #f9b698;
     position: absolute;
-    width: 75%;
+    width: 80%;
     height: 3px;
-    left: 12.5%;
+    left: 10%;
     bottom: 0;
     background-color: #f3f3f3;
     transform-origin: right;
@@ -103,7 +106,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
           <DropdownItem to={"/services#kid-services"}>
             KID SERVICES
           </DropdownItem>
-          <DropdownItem to={"/services#bosy-waxing"}>
+          <DropdownItem to={"/services#body-waxing"}>
             BODY WAXING
           </DropdownItem>
           <DropdownItem to={"/services#additional-services"}>
