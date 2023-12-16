@@ -6,12 +6,20 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const googleApiKey = process.env.GOOGLE_API_KEY;
 const placeId = process.env.GOOGLE_PLACE_ID;
 
 app.use(express.json());
-
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, ..."); // Add other headers as needed
+  next();
+});
+app.use(cors());
+app.use(bodyParser.json());
 app.get("/google-reviews", async (req: Request, res: Response) => {
   if (!googleApiKey || !placeId) {
     return res.status(500).json({ error: "API key or place ID not provided." });
