@@ -80,7 +80,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
 
   useEffect(() => {
     if (googleReviews) {
-      const reviews = googleReviews.map((review: Review, index: number) => (
+      const reviews = googleReviews.map((review: Review ) => (
         <GoogleReviewsCard key={uuidv4()} {...review} />
       ));
       setMappedReviews(reviews);
