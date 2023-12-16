@@ -13,11 +13,16 @@ import BackgroundTwo from "../assets/background/background-image-2.jpg";
 import { GoogleReviews } from "../components/GoogleReviews";
 
 const HomeContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const ContentContainer = styled.div`
   /* for laptop and desktop screens  */
   @media screen and (min-width: 1024px) {
     padding: 2rem 10rem;
   }
-`;
+`
 
 const HeroSection = styled.div`
   text-align: center;
@@ -30,7 +35,7 @@ const HeroSection = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap:1rem;
+  gap: 1rem;
   width: 100%;
   /* counters the HomeContainer padding for the laptop and desktop screens */
   /* @media screen and (min-width: 1024px) {
@@ -40,7 +45,7 @@ const HeroSection = styled.div`
 
 const DarkContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
-  max-width: 60rem;
+  width: 75%;
   height: 100%;
   padding: 1rem;
 `;
@@ -51,7 +56,6 @@ const Heading = styled.p`
 
 const Cursive = styled.p`
   font-family: 'Mr De Haviland', cursive;
-  
 `
 
 const ColoredCursive = styled(Cursive)`
@@ -192,93 +196,97 @@ export const Home = () => {
         swipeable
       >
         <HeroSection style={{ backgroundImage: `url(${BackgroundOne})`}}>
-            <DarkContainer>
-            <Heading>
-                <Cursive>Welcome to </Cursive>
-                Elegant Nails & Spa
-            </Heading>
-            <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
-            <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
-            <Subheading>Sunday: Closed</Subheading>
-            </DarkContainer>
-            {/* Book Button */}
-            <ButtonContainer>
-            <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
-            </ButtonContainer>
+          <DarkContainer>
+          <Heading>
+              <Cursive>Welcome to </Cursive>
+              ELEGANT NAILS & SPA
+          </Heading>
+          <Subheading>We look forward to servicing you. Come visit us.</Subheading>
+          <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
+          <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
+          <Subheading>Sunday: Closed</Subheading>
+          </DarkContainer>
+          {/* Book Button */}
+          <ButtonContainer>
+          <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
+          </ButtonContainer>
         </HeroSection>
 
         <HeroSection style={{ backgroundImage: `url(${BackgroundTwo})`}}>
-            <DarkContainer>
+          <DarkContainer>
             <Heading>
-                <Cursive>Welcome to </Cursive>
-                Elegant Nails & Spa
+                <Cursive>Get a manicure and pedicure at</Cursive>
+                ELEGANT NAILS & SPA
             </Heading>
+            <Subheading>Find a moment to treat yourself. Come visit us.</Subheading>
             <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
             <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
             <Subheading>Sunday: Closed</Subheading>
-            </DarkContainer>
-            {/* Book Button */}
-            <ButtonContainer>
-            <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
-            </ButtonContainer>
+          </DarkContainer>
+          {/* Book Button */}
+          <ButtonContainer>
+          <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
+          </ButtonContainer>
         </HeroSection>
       </Carousel>
 
-      <WelcomeMessage>
-        <Heading>
-          <ColoredCursive>Welcome to </ColoredCursive> 
-          Elegant Nails & Spa
-        </Heading>
-        From the minute you step in our salon to the minute you step out, you’ll
-        be provided with excellent service and comfort in a relaxing
-        environment. At Elegant Nails & Spa, you are part of our family and our
-        community.
-      </WelcomeMessage>
+      <ContentContainer>
+        <WelcomeMessage>
+          <Heading>
+            <ColoredCursive>Welcome to</ColoredCursive> 
+            Elegant Nails & Spa
+          </Heading>
+          From the minute you step in our salon to the minute you step out, you’ll
+          be provided with excellent service and comfort in a relaxing
+          environment. At Elegant Nails & Spa, you are part of our family and our
+          community.
+        </WelcomeMessage>
 
-      <CarouselContainer>
-        <Carousel
-          additionalTransfrom={0}
-          centerMode={true}
-          className=""
-          containerClass="react-multi-carousel-list"
-          draggable={false}
-          focusOnSelect={false}
-          infinite
-          itemClass="carousel-item-padding-40-px"
-          keyBoardControl
-          minimumTouchDrag={80}
-          pauseOnHover
-          renderArrowsWhenDisabled={false}
-          renderButtonGroupOutside={false}
-          renderDotsOutside={false}
-          responsive={responsive}
-          rtl={false}
-          showDots={false}
-          slidesToSlide={1}
-          swipeable
-        >
-          <ImgContainer>
-            <StyledImg src={NailsOne} />
-          </ImgContainer>
+        <CarouselContainer>
+          <Carousel
+            additionalTransfrom={0}
+            centerMode={true}
+            className=""
+            containerClass="react-multi-carousel-list"
+            draggable={false}
+            focusOnSelect={false}
+            infinite
+            itemClass="carousel-item-padding-40-px"
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={responsive}
+            rtl={false}
+            showDots={false}
+            slidesToSlide={1}
+            swipeable
+            >
+            <ImgContainer>
+              <StyledImg src={NailsOne} />
+            </ImgContainer>
 
-          <ImgContainer>
-            <StyledImg src={NailsTwo} />
-          </ImgContainer>
+            <ImgContainer>
+              <StyledImg src={NailsTwo} />
+            </ImgContainer>
 
-          <ImgContainer>
-            <StyledImg src={NailsThree} />
-          </ImgContainer>
+            <ImgContainer>
+              <StyledImg src={NailsThree} />
+            </ImgContainer>
 
-          <ImgContainer>
-            <StyledImg src={NailsFour} />
-          </ImgContainer>
+            <ImgContainer>
+              <StyledImg src={NailsFour} />
+            </ImgContainer>
 
-          <ImgContainer>
-            <StyledImg src={NailsFive} />
-          </ImgContainer>
-        </Carousel>
-      </CarouselContainer>
-      <GoogleReviews />
+            <ImgContainer>
+              <StyledImg src={NailsFive} />
+            </ImgContainer>
+          </Carousel>
+        </CarouselContainer>
+        <GoogleReviews />
+      </ContentContainer>
     </HomeContainer>
   );
 };
