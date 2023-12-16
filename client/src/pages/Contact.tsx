@@ -1,22 +1,29 @@
 import styled from "styled-components"
 
 const ContactContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  /* for laptop and desktop screens  */
+  @media screen and (min-width: 1024px) {
+    padding: 2rem 10rem;
+  }
 `
 
 const ContactInfo = styled.p`
-    
+  
 `
 
 const StyledForm = styled.form`
-    width: 100%;
-    max-width: 20rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #eff5ff;
-    padding: 1rem;
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  gap: 0.5rem;
 `
 
 const StyledLabel = styled.label`
@@ -24,10 +31,21 @@ const StyledLabel = styled.label`
 `
 
 const StyledButton = styled.button`
-    
+  background-color: #f9b698;
+  border: none;
+  color: white;
+  padding: 0.5rem;
 `
 
-const StyledInput = styled.input``
+const StyledInput = styled.input`
+  padding: 0.5rem;
+`
+
+const StyledTextArea = styled.textarea`
+  padding: 0.5rem;
+  max-width: 100%;
+  resize: none;
+`
 
 export const Contact = () => {
     return (
@@ -44,7 +62,7 @@ export const Contact = () => {
                 <StyledLabel htmlFor="email">Email</StyledLabel>
                 <StyledInput id="email" type="text" />
                 <StyledLabel htmlFor="message">Message</StyledLabel>
-                <StyledInput id="message" type="text" />
+                <StyledTextArea id="message" rows={5}/>
                 <StyledButton>Submit Form</StyledButton>
             </StyledForm>
         </ContactContainer>

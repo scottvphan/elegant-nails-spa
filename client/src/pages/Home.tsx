@@ -172,13 +172,14 @@ export const Home = () => {
     <HomeContainer>
       {/* Hero Section */}
       <Carousel
-        additionalTransfrom={0}
+        additionalTransfrom={1}
         arrows={false}
         autoPlay={true}
         autoPlaySpeed={5000}
         centerMode={false}
         className=""
         containerClass="container"
+        customTransition="transform 1500ms ease-in-out"
         draggable={true}
         focusOnSelect={false}
         infinite
@@ -194,6 +195,7 @@ export const Home = () => {
         showDots={false}
         slidesToSlide={1}
         swipeable
+        transitionDuration={1500}
       >
         <HeroSection style={{ backgroundImage: `url(${BackgroundOne})`}}>
           <DarkContainer>
