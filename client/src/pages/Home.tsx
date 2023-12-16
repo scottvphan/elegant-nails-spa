@@ -21,7 +21,6 @@ const HomeContainer = styled.div`
 
 const HeroSection = styled.div`
   text-align: center;
-  background-image: url(${BackgroundOne});
   background-position: center;
   background-size: cover;
   background-repeat: none;
@@ -32,10 +31,11 @@ const HeroSection = styled.div`
   align-items: center;
   flex-direction: column;
   gap:1rem;
+  width: 100%;
   /* counters the HomeContainer padding for the laptop and desktop screens */
-  @media screen and (min-width: 1024px) {
+  /* @media screen and (min-width: 1024px) {
     margin: -2rem -10rem 2rem -10rem;
-  }
+  } */
 `;
 
 const DarkContainer = styled.div`
@@ -133,6 +133,30 @@ const responsive = {
   },
 };
 
+const heroResponsive = {
+  desktop: {
+    breakpoint: {
+      max: 3000,
+      min: 1024,
+    },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: {
+      max: 464,
+      min: 0,
+    },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: {
+      max: 1024,
+      min: 464,
+    },
+    items: 1,
+  },
+};
+
 export const Home = () => {
   const { setIsAppointmentOpen }: HomeProps = useOutletContext();
 
@@ -143,21 +167,62 @@ export const Home = () => {
   return (
     <HomeContainer>
       {/* Hero Section */}
-      <HeroSection>
-        <DarkContainer>
-          <Heading>
-            <Cursive>Welcome to </Cursive>
-            Elegant Nails & Spa
-          </Heading>
-          <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
-          <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
-          <Subheading>Sunday: Closed</Subheading>
-        </DarkContainer>
-        {/* Book Button */}
-        <ButtonContainer>
-          <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
-        </ButtonContainer>
-      </HeroSection>
+      <Carousel
+        additionalTransfrom={0}
+        arrows={false}
+        autoPlay={true}
+        autoPlaySpeed={5000}
+        centerMode={false}
+        className=""
+        containerClass="container"
+        draggable={true}
+        focusOnSelect={false}
+        infinite
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        partialVisbile={false}
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={heroResponsive}
+        rtl={false}
+        showDots={false}
+        slidesToSlide={1}
+        swipeable
+      >
+        <HeroSection style={{ backgroundImage: `url(${BackgroundOne})`}}>
+            <DarkContainer>
+            <Heading>
+                <Cursive>Welcome to </Cursive>
+                Elegant Nails & Spa
+            </Heading>
+            <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
+            <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
+            <Subheading>Sunday: Closed</Subheading>
+            </DarkContainer>
+            {/* Book Button */}
+            <ButtonContainer>
+            <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
+            </ButtonContainer>
+        </HeroSection>
+
+        <HeroSection style={{ backgroundImage: `url(${BackgroundTwo})`}}>
+            <DarkContainer>
+            <Heading>
+                <Cursive>Welcome to </Cursive>
+                Elegant Nails & Spa
+            </Heading>
+            <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
+            <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
+            <Subheading>Sunday: Closed</Subheading>
+            </DarkContainer>
+            {/* Book Button */}
+            <ButtonContainer>
+            <StyledButton onClick={handleAppointmentModal}>BOOK NOW</StyledButton>
+            </ButtonContainer>
+        </HeroSection>
+      </Carousel>
 
       <WelcomeMessage>
         <Heading>
