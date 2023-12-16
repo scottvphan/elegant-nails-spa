@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 const googleApiKey = process.env.GOOGLE_API_KEY;
 const placeId = process.env.GOOGLE_PLACE_ID;
 
