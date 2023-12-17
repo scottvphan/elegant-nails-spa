@@ -42,7 +42,15 @@ const ServicePrice = styled.h6`
   color: #f9b698;
 `;
 
-export const ServicesComponent = (data: any) => {
+interface DataPropsType {
+  name: string,
+  options: {
+    price: number
+  }[]
+}
+
+export const ServicesComponent = (data: DataPropsType) => {
+  console.log(data)
 
   return (
     <>

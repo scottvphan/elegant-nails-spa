@@ -86,7 +86,7 @@ export const Contact = () => {
         <StyledInput type="email" name="from_email"/>
         <StyledLabel>Message</StyledLabel>
         <StyledTextArea name="message" rows={5}/>
-        <StyledInput type="submit" value="Send" />
+        <StyledButton>Submit Form</StyledButton>
       </StyledForm>
     </ContactContainer>
   )
