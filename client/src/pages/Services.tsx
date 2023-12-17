@@ -42,8 +42,20 @@ const ServiceLayoutContainer = styled.div`
 export const Services = () => {
   console.log(jsonData);
 
-  const mappedServices = jsonData.services.map((data: any) => {
-    return <ServicesComponent {...data} />;
+  const mappedServices = jsonData.services.map((data: any, index) => {
+    return <ServicesComponent key={index} {...data} />;
+  });
+
+  const mappedPolish = jsonData.polish.map((data: any, index) => {
+    return <ServicesComponent key={index} {...data} />;
+  });
+  
+  const mappedWaxing = jsonData.waxing.map((data: any, index) => {
+      return <ServicesComponent key={index} {...data} />;
+  });
+    
+  const mappedKids = jsonData.kids.map((data: any, index) => {
+      return <ServicesComponent key={index} {...data} />;
   });
 
   return (
@@ -53,6 +65,21 @@ export const Services = () => {
         <PricingHeader>Services</PricingHeader>
       </ServiceHeadingContainer>
       <ServiceLayoutContainer>{mappedServices}</ServiceLayoutContainer>
+
+      <ServiceHeadingContainer>
+        <PricingHeader>Polish</PricingHeader>
+      </ServiceHeadingContainer>
+      <ServiceLayoutContainer>{mappedPolish}</ServiceLayoutContainer>
+
+      <ServiceHeadingContainer>
+        <PricingHeader>Waxing</PricingHeader>
+      </ServiceHeadingContainer>
+      <ServiceLayoutContainer>{mappedWaxing}</ServiceLayoutContainer>
+
+      <ServiceHeadingContainer>
+        <PricingHeader>Kids</PricingHeader>
+      </ServiceHeadingContainer>
+      <ServiceLayoutContainer>{mappedKids}</ServiceLayoutContainer>
     </ServicesContainer>
   );
 };
