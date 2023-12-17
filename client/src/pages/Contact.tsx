@@ -1,4 +1,6 @@
+import { FormEvent } from "react"
 import styled from "styled-components"
+import emailjs from "@emailjs/browser"
 
 const ContactContainer = styled.div`
   display: flex;
@@ -48,23 +50,44 @@ const StyledTextArea = styled.textarea`
 `
 
 export const Contact = () => {
-    return (
-        <ContactContainer>
-            <ContactInfo>
-                Phone: (610) 328-4340
-            </ContactInfo>
-            <ContactInfo>
-                Email: elegantnails19070@gmail.com
-            </ContactInfo>
-            <StyledForm>
-                <StyledLabel htmlFor="name">Name</StyledLabel>
-                <StyledInput id="name" type="text" />
-                <StyledLabel htmlFor="email">Email</StyledLabel>
-                <StyledInput id="email" type="text" />
-                <StyledLabel htmlFor="message">Message</StyledLabel>
-                <StyledTextArea id="message" rows={5}/>
-                <StyledButton>Submit Form</StyledButton>
-            </StyledForm>
-        </ContactContainer>
-    )
+
+  function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "#form",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result: { text: string }) => {
+          console.log(result.text);
+        },
+        (error: { text: any }) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  return (
+    <ContactContainer>
+      <ContactInfo>
+        Phone: (610) 328-4340
+      </ContactInfo>
+      <ContactInfo>
+        Email: elegantnails19070@gmail.com
+      </ContactInfo>
+      <StyledForm id={"form"} onSubmit={(e) => handleFormSubmit(e)}>
+        <StyledLabel>Name</StyledLabel>
+        <StyledInput type="text" name="from_name"/>
+        <StyledLabel>Email</StyledLabel>
+        <StyledInput type="email" name="from_email"/>
+        <StyledLabel>Message</StyledLabel>
+        <StyledTextArea name="message" rows={5}/>
+        <StyledInput type="submit" value="Send" />
+      </StyledForm>
+    </ContactContainer>
+  )
 }
