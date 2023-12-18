@@ -78,6 +78,9 @@ const WelcomeMessage = styled.p`
   margin: 0 auto;
   font-size: 1.5rem;
   color: #757575;
+  @media screen and (max-width: 540px) {
+    font-size:1rem;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -100,6 +103,9 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 20%;
+  @media screen and (max-width: 540px) {
+    width:50%;
+  }
 `;
 
 const CarouselContainer = styled.div`

@@ -41,6 +41,9 @@ const FooterMessage = styled.p`
     font-size: 1.2rem;
   }
   grid-area: message;
+  @media screen and (max-width:520px) {
+    font-size:1.1rem;
+  }
 `;
 
 const FooterHeading = styled.h3`
