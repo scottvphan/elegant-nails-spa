@@ -13,13 +13,16 @@ const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   overflow-y: scroll;
   border-radius: 0.5rem;
+  @media screen and (max-width:768px) {
+    min-width:90%;
+  }
 
 `;
 export default function AppointmentModal() {
   return (
     <ModalContainer>
       <iframe
-        src="https://app.acuityscheduling.com/schedule.php?owner=30979228"
+        src="https://app.acuityscheduling.com/schedule.php?owner=31011665"
         title="Schedule Appointment"
         width="100%"
         height="800"

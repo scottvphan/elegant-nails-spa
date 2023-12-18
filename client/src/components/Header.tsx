@@ -3,11 +3,11 @@ import { Navbar } from "./Navbar";
 import { NavLink } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
 import { HamburgerMenu } from "./HamburgerMenu";
-import CompanyLogo from "../assets/logo/company-logo.png"
-import PhoneIcon from "/icons/phone.svg"
-import ClockIcon from "/icons/clock.svg"
-import LocationIcon from "/icons/location.svg"
-import FacebookIcon from "../assets/logo/facebook.svg"
+import CompanyLogo from "../assets/logo/company-logo.png";
+import PhoneIcon from "/icons/phone.svg";
+import ClockIcon from "/icons/clock.svg";
+import LocationIcon from "/icons/location.svg";
+import FacebookIcon from "../assets/logo/facebook.svg";
 
 interface HeaderProps {
   setIsHamburgerOpen: Dispatch<SetStateAction<boolean>>;
@@ -37,7 +37,7 @@ const NavbarContainer = styled.div`
 `;
 
 const StoreInfoContainer = styled.div`
-  position:relative;
+  position: relative;
   background-color: #f8f8f8;
   display: flex;
   align-items: center;
@@ -53,7 +53,6 @@ const StoreInfoContainer = styled.div`
   }
 `;
 
-
 const StoreInfoText = styled.p`
   display: flex;
   align-items: center;
@@ -66,7 +65,7 @@ const ScheduleText = styled(StoreInfoText)`
   @media screen and (min-width: 768px) {
     display: flex;
   }
-`
+`;
 
 const LocationText = styled(StoreInfoText)`
   display: none;
@@ -74,7 +73,7 @@ const LocationText = styled(StoreInfoText)`
   @media screen and (min-width: 1024px) {
     display: flex;
   }
-`
+`;
 
 const StoreInfoLink = styled.a`
   text-decoration: 0;
@@ -92,16 +91,32 @@ const StoreLogo = styled(NavLink)`
 
 const StyledImg = styled.img`
   width: 50%;
-`
+`;
 
 const StyledIcon = styled.img`
   width: 1.25rem;
-`
+`;
+
+const BookButton = styled.button`
+  border: 0;
+  color: white;
+  background-color: #f9b698;
+  padding: 0.5rem 1rem;
+  display:none;
+  @media screen and (max-width:768px) {
+    display: block;
+  }
+`;
 
 export const Header = ({
   setIsHamburgerOpen,
   setIsAppointmentOpen,
 }: HeaderProps) => {
+
+  const handleAppointmentModal = () => {
+    setIsAppointmentOpen((prevState: boolean) => !prevState);
+  };
+
   return (
     <>
       {/* Non-sticky part */}
@@ -118,15 +133,18 @@ export const Header = ({
           <StyledIcon src={LocationIcon} />
           407 Baltimore Pike, Morton, PA 19070
         </LocationText>
-        <StyledIcon style={{ marginLeft: "auto"}} src={FacebookIcon}/>
+        <StyledIcon style={{ marginLeft: "auto" }} src={FacebookIcon} />
       </StoreInfoContainer>
 
       {/* Sticky navbar */}
       <StickyContainer>
         <NavbarContainer>
           <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
-          <StoreLogo to={"/"}><StyledImg src={CompanyLogo} /></StoreLogo>
+          <StoreLogo to={"/"}>
+            <StyledImg src={CompanyLogo} />
+          </StoreLogo>
           <Navbar setIsAppointmentOpen={setIsAppointmentOpen} />
+          <BookButton onClick={handleAppointmentModal}>BOOK NOW</BookButton>
         </NavbarContainer>
       </StickyContainer>
     </>

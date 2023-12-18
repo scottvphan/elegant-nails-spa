@@ -15,6 +15,8 @@ const PricingHeader = styled.h2`
   font-style: normal;
   font-weight: 400;
   line-height: 24px; 
+  border-bottom:0.2rem solid #f9b698;
+  padding:1rem;
 `;
 const FancyFont = styled.h5`
   color: #f9b698;
