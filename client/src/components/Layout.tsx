@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { MobileNavbar } from "./MobileNavbar";
 import AppointmentModal from "./AppointmentModal";
+import ScrollToTop from "../utils/ScrollToTop"
 
 const LayoutContainer = styled.div``;
 const ModalBackdrop = styled.div`
@@ -29,6 +30,8 @@ export const Layout = () => {
 
   return (
     <LayoutContainer>
+      {/* Scrolls to top on link change */}
+      <ScrollToTop />
       {isHamburgerOpen && (
         <MobileNavbar setIsHamburgerOpen={setIsHamburgerOpen} />
       )}

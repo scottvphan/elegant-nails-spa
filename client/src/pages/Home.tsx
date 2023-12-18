@@ -52,6 +52,9 @@ const DarkContainer = styled.div`
 
 const Heading = styled.p`
   font-size: 4rem;
+  @media screen and (max-width: 540px) {
+    font-size:2rem;
+  }
 `;
 
 const Cursive = styled.p`
@@ -64,6 +67,9 @@ const ColoredCursive = styled(Cursive)`
 
 const Subheading = styled.p`
   font-size: 1.5rem;
+  @media screen and (max-width: 540px) {
+    font-size:1rem;
+  }
 `;
 
 const WelcomeMessage = styled.p`
@@ -82,6 +88,13 @@ const StyledButton = styled.button`
   text-align: center;
   width:100%;
   font-size:2rem;
+  @media screen and (max-width: 540px) {
+    padding:0.5rem;
+  }
+  @media screen and (max-width: 540px) {
+    font-size:1rem;
+    padding:0.5rem;
+  }
 `;
 const ButtonContainer = styled.div`
   display: flex;

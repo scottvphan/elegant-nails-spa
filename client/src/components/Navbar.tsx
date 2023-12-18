@@ -94,7 +94,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
         onMouseOut={() => setDropdownOpen(false)}
       >
         <StyledNavLink to="/services">SERVICES</StyledNavLink>
-        <ServicesDropdown
+        {/* <ServicesDropdown
           style={{ display: `${dropdownOpen ? "flex" : "none"}` }}
         >
           <DropdownItem to={"/services#manicure"}>
@@ -112,7 +112,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
           <DropdownItem to={"/services#additional-services"}>
             ADDITIONAL SERVICES
           </DropdownItem>
-        </ServicesDropdown>
+        </ServicesDropdown> */}
       </ServicesContainer>
       <StyledNavLink to="/contact">CONTACT</StyledNavLink>
       <BookButton onClick={handleAppointmentModal}>BOOK NOW</BookButton>
