@@ -8,8 +8,8 @@ const NavbarContainer = styled.div`
   gap: 0.5rem;
   align-items: center;
   padding: 1rem;
-  
-  @media screen and (max-width:768px) {
+
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -71,6 +71,13 @@ const BookButton = styled.button`
   color: white;
   background-color: #f9b698;
   padding: 0.3125rem 1.375rem;
+  transition: 0.5s;
+  &:hover {
+    background-color: white;
+    color: #f9b698;
+    transition: 0.5s;
+    border:1px solid #f9b698;
+  }
 `;
 
 // const DropdownItem = styled(NavLink)`
@@ -92,7 +99,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
   const handleAppointmentModal = () => {
     setIsAppointmentOpen((prevState: boolean) => !prevState);
   };
-  
+
   return (
     <NavbarContainer>
       <StyledNavLink to="/">HOME</StyledNavLink>
@@ -100,8 +107,8 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
         onMouseOver={() => setDropdownOpen(true)}
         onMouseOut={() => setDropdownOpen(false)}
       > */}
-        <StyledNavLink to="/services">SERVICES</StyledNavLink>
-        {/* <ServicesDropdown
+      <StyledNavLink to="/services">SERVICES</StyledNavLink>
+      {/* <ServicesDropdown
           style={{ display: `${dropdownOpen ? "flex" : "none"}` }}
         >
           <DropdownItem to={"/services#manicure"}>

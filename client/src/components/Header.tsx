@@ -87,10 +87,16 @@ const StoreLogo = styled(NavLink)`
   text-decoration: none;
   font-size: 2rem;
   color: black;
+  @media screen and (max-width:768px) {
+    width:40%;
+  }
 `;
 
 const StyledImg = styled.img`
   width: 50%;
+  @media screen and (max-width:768px) {
+    width:100%;
+  }
 `;
 
 const StyledIcon = styled.img`
@@ -103,8 +109,14 @@ const BookButton = styled.button`
   background-color: #f9b698;
   padding: 0.5rem 1rem;
   display: none;
+  transition: 0.5s;
   @media screen and (max-width: 768px) {
     display: block;
+  }
+  &:hover {
+    background-color: white;
+    color: #f9b698;
+    transition: 0.5s;
   }
 `;
 
