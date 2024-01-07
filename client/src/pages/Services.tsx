@@ -3,6 +3,9 @@ import jsonData from "../../data.json";
 import { ServicesComponent } from "../components/ServicesComponent";
 
 const ServicesContainer = styled.div`
+  max-width: 60rem;
+  margin: 0 auto;
+
   @media screen and (min-width: 1024px) {
     gap: 1rem;
     padding: 2rem 6rem;
@@ -44,11 +47,11 @@ const ServiceLayoutContainer = styled.div`
 export const Services = () => {
   console.log(jsonData);
 
-  const mappedServices = jsonData.services.map((data: any, index) => {
+  const mappedManicure = jsonData.manicure.map((data: any, index) => {
     return <ServicesComponent key={index} {...data} />;
   });
 
-  const mappedPolish = jsonData.polish.map((data: any, index) => {
+  const mappedPedicure = jsonData.pedicure.map((data: any, index) => {
     return <ServicesComponent key={index} {...data} />;
   });
   
@@ -60,18 +63,22 @@ export const Services = () => {
       return <ServicesComponent key={index} {...data} />;
   });
 
+  const mappedAdditionalServices = jsonData["additional services"].map((data: any, index) => {
+      return <ServicesComponent key={index} {...data} />;
+  })
+
   return (
     <ServicesContainer>
       <ServiceHeadingContainer>
-        <FancyFont>PricingServices</FancyFont>
-        <PricingHeader>Services</PricingHeader>
+        <FancyFont>Services</FancyFont>
+        <PricingHeader>Manicure</PricingHeader>
       </ServiceHeadingContainer>
-      <ServiceLayoutContainer>{mappedServices}</ServiceLayoutContainer>
+      <ServiceLayoutContainer>{mappedManicure}</ServiceLayoutContainer>
 
       <ServiceHeadingContainer>
-        <PricingHeader>Polish</PricingHeader>
+        <PricingHeader>Pedicure</PricingHeader>
       </ServiceHeadingContainer>
-      <ServiceLayoutContainer>{mappedPolish}</ServiceLayoutContainer>
+      <ServiceLayoutContainer>{mappedPedicure}</ServiceLayoutContainer>
 
       <ServiceHeadingContainer>
         <PricingHeader>Waxing</PricingHeader>
@@ -82,6 +89,11 @@ export const Services = () => {
         <PricingHeader>Kids</PricingHeader>
       </ServiceHeadingContainer>
       <ServiceLayoutContainer>{mappedKids}</ServiceLayoutContainer>
+
+      <ServiceHeadingContainer>
+        <PricingHeader>Additional Services</PricingHeader>
+      </ServiceHeadingContainer>
+      <ServiceLayoutContainer>{mappedAdditionalServices}</ServiceLayoutContainer>
     </ServicesContainer>
   );
 };

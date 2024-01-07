@@ -1,15 +1,34 @@
 {
-  "services": [
+  "manicure": [
+    {
+      "name": "Manicure",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Manicure with Gel Polish",
+      "options": [
+        {
+          "price": 30
+        }
+      ]
+    },
+    {
+      "name": "Nail Polish",
+      "options": [
+        {
+          "price": 10
+        }
+      ]
+    },
     {
       "name": "Acrylic Nails",
       "options": [
         {
-          "type": "Full Set",
           "price": 35
-        },
-        {
-          "type": "Fill In",
-          "price": 25
         }
       ]
     },
@@ -17,174 +36,7 @@
       "name": "Gel Nails (Liquid)",
       "options": [
         {
-          "type": "Full Set",
           "price": 55
-        },
-        {
-          "type": "Fill In",
-          "price": 35
-        }
-      ]
-    },
-    {
-      "name": "Take Off New Set",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 40
-        }
-      ]
-    },
-    {
-      "name": "Dipping Powder",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 40
-        }
-      ]
-    },
-    {
-      "name": "Pink & White Nails",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 50
-        }
-      ]
-    },
-    {
-      "name": "Ombre",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 55
-        }
-      ]
-    },
-    {
-      "name": "Spa Pedicure & Manicure",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 65
-        }
-      ]
-    },
-    {
-      "name": "Manicure",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 15
-        }
-      ]
-    },
-    {
-      "name": "Spa Pedicure",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 50
-        }
-      ]
-    },
-    {
-      "name": "Manicure With Gel Polish",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 30
-        }
-      ]
-    },
-    {
-      "name": "Pedicure With Gel Polish",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 45
-        }
-      ]
-    },
-    {
-      "name": "Pedicure",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 30
-        }
-      ]
-    },
-    {
-      "name": "Nails Art Design",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 3
-        }
-      ]
-    },
-    {
-      "name": "Nail Cut Down",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 3
-        }
-      ]
-    },
-    {
-      "name": "Nails Removal",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 10
-        }
-      ]
-    },
-    {
-      "name": "Nail Repair Per Nail",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 3
-        }
-      ]
-    },
-    {
-      "name": "Nail Polish Change French",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 15
-        }
-      ]
-    },
-    {
-      "name": "Acrylic take off and Manicure",
-      "options": [
-        {
-          "type": "Full Set",
-          "price": 25
-        }
-      ]
-    }
-  ],
-  "polish": [
-    {
-      "name": "Hands",
-      "options": [
-        {
-          "price": 10
-        }
-      ]
-    },
-    {
-      "name": "Toes",
-      "options": [
-        {
-          "price": 15
         }
       ]
     },
@@ -197,7 +49,81 @@
       ]
     },
     {
-      "name": "Gel Polish(Toes)",
+      "name": "Dipping Powder",
+      "options": [
+        {
+          "price": 40
+        }
+      ]
+    },
+    {
+      "name": "Pink and White Nails",
+      "options": [
+        {
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Ombre",
+      "options": [
+        {
+          "price": 55
+        }
+      ]
+    },
+    {
+      "name": "Acrylic Takeoff",
+      "options": [
+        {
+          "price": 30
+        }
+      ]
+    }
+  ],
+  "pedicure": [
+    {
+      "name": "Pedicure",
+      "options": [
+        {
+          "price": 30
+        }
+      ]
+    },
+    {
+      "name": "Pedicure with Gel Polish",
+      "options": [
+        {
+          "price": 45
+        }
+      ]
+    },
+    {
+      "name": "Spa Pedicure",
+      "options": [
+        {
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Spa Pedicure and Manicure",
+      "options": [
+        {
+          "price": 65
+        }
+      ]
+    },
+    {
+      "name": "Nail Polish",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Gel Polish",
       "options": [
         {
           "price": 25
@@ -325,6 +251,56 @@
       "options": [
         {
           "price": 20
+        }
+      ]
+    }
+  ],
+  "additional services": [
+    {
+      "name": "Takeoff New Set",
+      "options": [
+        {
+          "price": 40
+        }
+      ]
+    },
+    {
+      "name": "Nails Art Design",
+      "options": [
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nail Cut Down",
+      "options": [
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nails Removal",
+      "options": [
+        {
+          "price": 10
+        }
+      ]
+    },
+    {
+      "name": "Nails Repair Per Nail",
+      "options": [
+        {
+          "price": 3
+        }
+      ]
+    },
+    {
+      "name": "Nail Polish Change French",
+      "options": [
+        {
+          "price": 15
         }
       ]
     }
