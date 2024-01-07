@@ -7,11 +7,29 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  max-width: 50rem;
+  gap: 2rem;
+  margin: 0 auto;
 
   /* for laptop and desktop screens  */
   @media screen and (min-width: 1024px) {
     padding: 2rem 10rem;
   }
+`
+
+const TextContainer = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`
+
+const Heading = styled.p`
+  font-size: 2rem;
+`
+
+const TextContent = styled.p`
+  max-width: 40ch;
 `
 
 const ContactInfo = styled.p`
@@ -20,12 +38,11 @@ const ContactInfo = styled.p`
 
 const StyledForm = styled.form`
   width: 100%;
-  max-width: 20rem;
   display: flex;
   flex-direction: column;
   background-color: #f8f8f8;
   padding: 1rem;
-  gap: 0.5rem;
+  gap: 1rem;
 `
 
 const StyledLabel = styled.label`
@@ -41,12 +58,14 @@ const StyledButton = styled.button`
 
 const StyledInput = styled.input`
   padding: 0.5rem;
+  border: 0;
 `
 
 const StyledTextArea = styled.textarea`
   padding: 0.5rem;
   max-width: 100%;
   resize: none;
+  border: 0;
 `
 
 export const Contact = () => {
@@ -73,12 +92,20 @@ export const Contact = () => {
 
   return (
     <ContactContainer>
-      <ContactInfo>
-        Phone: (610) 328-4340
-      </ContactInfo>
-      <ContactInfo>
-        Email: elegantnails19070@gmail.com
-      </ContactInfo>
+      <TextContainer>
+        <Heading>
+          Need to get in contact with us?
+        </Heading>
+        <TextContent>
+          Call us at the phone number below or fill out the form to send us any messages or questiongs you may have.
+        </TextContent>
+        <ContactInfo>
+          Phone: (610) 328-4340
+        </ContactInfo>
+        <ContactInfo>
+          Email: elegantnails19070@gmail.com
+        </ContactInfo>
+      </TextContainer>
       <StyledForm id={"form"} onSubmit={(e) => handleFormSubmit(e)}>
         <StyledLabel>Name</StyledLabel>
         <StyledInput type="text" name="from_name"/>

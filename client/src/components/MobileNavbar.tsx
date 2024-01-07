@@ -16,6 +16,7 @@ const MobileNavbarContainer = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex;
+    gap: 2rem;
   }
   height: 100vh;
   width: 100vw;
