@@ -50,8 +50,8 @@ interface DataPropsType {
 }
 
 export const ServicesComponent = (data: DataPropsType) => {
-  console.log(data)
 
+  console.log(data)
   return (
     <>
         <ServiceContainer>

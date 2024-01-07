@@ -3,14 +3,17 @@ import { useOutletContext } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+import { GoogleReviews } from "../components/GoogleReviews";
+
 import NailsOne from "../assets/carousel/nails-image-1.jpg";
 import NailsTwo from "../assets/carousel/nails-image-2.jpg";
 import NailsThree from "../assets/carousel/nails-image-3.jpg";
 import NailsFour from "../assets/carousel/nails-image-4.jpg";
 import NailsFive from "../assets/carousel/nails-image-5.jpg";
+import NailsSix from "../assets/carousel/nails-image-6.jpg"
 import BackgroundOne from "../assets/background/background-image-1.png";
 import BackgroundTwo from "../assets/background/background-image-2.jpg";
-import { GoogleReviews } from "../components/GoogleReviews";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -303,6 +306,10 @@ export const Home = () => {
 
             <ImgContainer>
               <StyledImg src={NailsFive} />
+            </ImgContainer>
+
+            <ImgContainer>
+              <StyledImg src={NailsSix} />
             </ImgContainer>
           </Carousel>
         </CarouselContainer>
