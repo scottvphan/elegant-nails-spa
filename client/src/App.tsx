@@ -13,47 +13,62 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [hasAccess, setHasAccess] = useState<boolean>(false);
-  const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const accessLocalStorage = getLocalStorage("access");
-    if (accessLocalStorage) {
+    const accessCookie = getCookie("access");
+    if (accessCookie) {
       setHasAccess(true);
     }
   }, []);
 
   const handleLogin = (): void => {
-    if (username === "elegantnails" && password === "phan") {
-      setLocalStorage("access", "true", 24);
+    if (!password.trim()) {
+      setError("Password is empty");
+      return;
+    }
+
+    if (password === "elegantphan") {
+      setCookie("access", "true", 24);
       setHasAccess(true);
+    } else {
+      setError("Incorrect password");
     }
   };
 
-  const setLocalStorage = (
-    name: string,
-    value: string,
-    hours: number
-  ): void => {
-    const expirationTime = new Date().getTime() + hours * 60 * 60 * 1000;
-    localStorage.setItem(name, JSON.stringify({ value, expirationTime }));
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === "Enter") {
+      handleLogin();
+    }
   };
 
-  const getLocalStorage = (name: string): string | null => {
-    const item = localStorage.getItem(name);
-    if (item) {
-      const parsedItem = JSON.parse(item);
-      if (parsedItem.expirationTime > new Date().getTime()) {
-        return parsedItem.value;
-      } else {
-        removeLocalStorage(name);
+  const setCookie = (name: string, value: string, hours: number): void => {
+    const expirationTime = new Date().getTime() + hours * 60 * 60 * 1000;
+    document.cookie = `${name}=${JSON.stringify({
+      value,
+      expirationTime,
+    })}; expires=${new Date(expirationTime).toUTCString()}`;
+  };
+
+  const getCookie = (name: string): string | null => {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split("=");
+      if (cookieName === name) {
+        const parsedValue = JSON.parse(cookieValue);
+        if (parsedValue.expirationTime > new Date().getTime()) {
+          return parsedValue.value;
+        } else {
+          removeCookie(name);
+        }
       }
     }
     return null;
   };
 
-  const removeLocalStorage = (name: string): void => {
-    localStorage.removeItem(name);
+  const removeCookie = (name: string): void => {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
   };
 
   const GlobalStyle = createGlobalStyle`
@@ -104,26 +119,19 @@ function App() {
         <>
           <form>
             <label>
-              Username:
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </label>
-            <br />
-            <label>
               Password:
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </label>
             <br />
             <button type="button" onClick={handleLogin}>
               Login
             </button>
+            {error && <div style={{ color: "red" }}>{error}</div>}
           </form>
         </>
       )}
