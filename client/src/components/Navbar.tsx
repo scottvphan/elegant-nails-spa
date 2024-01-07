@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Dispatch, SetStateAction } from "react";
@@ -8,26 +8,26 @@ const NavbarContainer = styled.div`
   gap: 0.5rem;
   align-items: center;
   padding: 1rem;
-  
-  @media screen and (max-width:768px) {
+
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
-const ServicesContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-`;
+// const ServicesContainer = styled.div`
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+// `;
 
-const ServicesDropdown = styled.div`
-  position: absolute;
-  padding: 1rem;
-  background-color: #e3e3e3;
-  flex-direction: column;
-  gap: 0.5rem;
-  top: 2.75rem;
-`;
+// const ServicesDropdown = styled.div`
+//   position: absolute;
+//   padding: 1rem;
+//   background-color: #e3e3e3;
+//   flex-direction: column;
+//   gap: 0.5rem;
+//   top: 2.75rem;
+// `;
 
 const StyledNavLink = styled(NavLink)`
   color: #323232;
@@ -57,6 +57,13 @@ const StyledNavLink = styled(NavLink)`
     transition: color 0.5s ease-out;
     color: #f9b698;
   }
+
+  &.active {
+    color: #f9b698;
+    &:after {
+      background-color: #f9b698;
+    }
+  }
 `;
 
 const BookButton = styled.button`
@@ -64,37 +71,44 @@ const BookButton = styled.button`
   color: white;
   background-color: #f9b698;
   padding: 0.3125rem 1.375rem;
-`;
-
-const DropdownItem = styled(NavLink)`
-  color: black;
-  text-decoration: none;
-
+  transition: 0.5s;
   &:hover {
+    background-color: white;
     color: #f9b698;
+    transition: 0.5s;
+    border:1px solid #f9b698;
   }
 `;
+
+// const DropdownItem = styled(NavLink)`
+//   color: black;
+//   text-decoration: none;
+
+//   &:hover {
+//     color: #f9b698;
+//   }
+// `;
 
 interface HeaderProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleAppointmentModal = () => {
     setIsAppointmentOpen((prevState: boolean) => !prevState);
   };
-  
+
   return (
     <NavbarContainer>
       <StyledNavLink to="/">HOME</StyledNavLink>
-      <ServicesContainer
+      {/* <ServicesContainer
         onMouseOver={() => setDropdownOpen(true)}
         onMouseOut={() => setDropdownOpen(false)}
-      >
-        <StyledNavLink to="/services">SERVICES</StyledNavLink>
-        {/* <ServicesDropdown
+      > */}
+      <StyledNavLink to="/services">SERVICES</StyledNavLink>
+      {/* <ServicesDropdown
           style={{ display: `${dropdownOpen ? "flex" : "none"}` }}
         >
           <DropdownItem to={"/services#manicure"}>
@@ -113,7 +127,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
             ADDITIONAL SERVICES
           </DropdownItem>
         </ServicesDropdown> */}
-      </ServicesContainer>
+      {/* </ServicesContainer> */}
       <StyledNavLink to="/contact">CONTACT</StyledNavLink>
       <BookButton onClick={handleAppointmentModal}>BOOK NOW</BookButton>
     </NavbarContainer>
