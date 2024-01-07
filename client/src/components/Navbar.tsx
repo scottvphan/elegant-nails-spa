@@ -72,6 +72,7 @@ const BookButton = styled.button`
   background-color: #f9b698;
   padding: 0.3125rem 1.375rem;
   transition: 0.5s;
+  white-space: nowrap;
   &:hover {
     background-color: white;
     color: #f9b698;

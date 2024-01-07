@@ -110,6 +110,7 @@ const BookButton = styled.button`
   padding: 0.5rem 1rem;
   display: none;
   transition: 0.5s;
+  white-space: nowrap;
   @media screen and (max-width: 768px) {
     display: block;
   }

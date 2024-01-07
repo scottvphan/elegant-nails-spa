@@ -33,6 +33,7 @@ const HeroSection = styled.div`
   background-size: cover;
   background-repeat: none;
   min-height: 40rem;
+  height: 100%;
   color: white;
   display: flex;
   justify-content: center;
@@ -40,6 +41,7 @@ const HeroSection = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  padding: 2rem;
   /* counters the HomeContainer padding for the laptop and desktop screens */
   /* @media screen and (min-width: 1024px) {
     margin: -2rem -10rem 2rem -10rem;
@@ -97,17 +99,13 @@ const StyledButton = styled.button`
   white-space: nowrap;
 
   @media screen and (max-width: 540px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0.5rem;
   }
 `;
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 20%;
-  @media screen and (max-width: 540px) {
-    width:50%;
-  }
 `;
 
 const CarouselContainer = styled.div`
@@ -220,14 +218,14 @@ export const Home = () => {
       >
         <HeroSection style={{ backgroundImage: `url(${BackgroundOne})`}}>
           <DarkContainer>
-          <Heading>
-              <Cursive>Welcome to </Cursive>
-              ELEGANT NAILS & SPA
-          </Heading>
-          <Subheading>We look forward to servicing you. Come visit us.</Subheading>
-          <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
-          <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
-          <Subheading>Sunday: Closed</Subheading>
+            <Heading>
+                <Cursive>Welcome to </Cursive>
+                ELEGANT NAILS & SPA
+            </Heading>
+            <Subheading>We look forward to servicing you. Come visit us.</Subheading>
+            <Subheading>Mon-Fri: 9:30 AM – 7:00 PM</Subheading>
+            <Subheading>Saturday: 9:00 AM – 6:00 PM</Subheading>
+            <Subheading>Sunday: Closed</Subheading>
           </DarkContainer>
           {/* Book Button */}
           <ButtonContainer>
