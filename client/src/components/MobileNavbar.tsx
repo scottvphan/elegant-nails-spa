@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 const MobileNavbarContainer = styled.div`
-  background-color: black;
+  background-color: #323232;
   color: white;
   flex-direction: column;
   padding: 1rem;
