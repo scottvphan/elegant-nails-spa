@@ -3,12 +3,17 @@ import jsonData from "../../data.json";
 import { ServicesComponent } from "../components/ServicesComponent";
 
 const ServicesContainer = styled.div`
-  max-width: 60rem;
   margin: 0 auto;
-
+  padding: 1rem;
+  max-width: 60rem;
+  
   @media screen and (min-width: 1024px) {
     gap: 1rem;
     padding: 2rem 6rem;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    padding: 2rem;
   }
 `;
 const PricingHeader = styled.h2`
@@ -20,6 +25,10 @@ const PricingHeader = styled.h2`
   line-height: 24px; 
   border-bottom:0.2rem solid #f9b698;
   padding:1rem;
+
+  @media screen and (max-width: 540px) {
+    font-size: 2.5rem;
+  }
 `;
 const FancyFont = styled.h5`
   color: #f9b698;
@@ -28,6 +37,10 @@ const FancyFont = styled.h5`
   font-size: 4rem;
   font-style: normal;
   font-weight: 400;
+
+  @media screen and (max-width: 540px) {
+    font-size: 2.5rem;
+  }
 `;
 const ServiceHeadingContainer = styled.div`
   display: flex;
