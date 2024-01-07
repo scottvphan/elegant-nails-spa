@@ -23,7 +23,9 @@ function App() {
     }
   }, []);
 
-  const handleLogin = (): void => {
+  const handleLogin = (e: React.FormEvent): void => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
     if (!password.trim()) {
       setError("Password is empty");
       return;
@@ -39,7 +41,7 @@ function App() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "Enter") {
-      handleLogin();
+      handleLogin(e);
     }
   };
 
@@ -117,7 +119,7 @@ function App() {
         </>
       ) : (
         <>
-          <form>
+          <form onSubmit={handleLogin}>
             <label>
               Password:
               <input
@@ -128,9 +130,7 @@ function App() {
               />
             </label>
             <br />
-            <button type="button" onClick={handleLogin}>
-              Login
-            </button>
+            <button type="submit">Login</button>
             {error && <div style={{ color: "red" }}>{error}</div>}
           </form>
         </>
