@@ -92,14 +92,13 @@ const StyledButton = styled.button`
   background-color: #f9b698;
   padding: 1rem;
   text-align: center;
-  width:100%;
-  font-size:2rem;
+  width: 100%;
+  font-size: 2rem;
+  white-space: nowrap;
+
   @media screen and (max-width: 540px) {
-    padding:0.5rem;
-  }
-  @media screen and (max-width: 540px) {
-    font-size:1rem;
-    padding:0.5rem;
+    font-size: 0.8rem;
+    padding: 0.5rem;
   }
 `;
 const ButtonContainer = styled.div`
@@ -197,7 +196,7 @@ export const Home = () => {
         additionalTransfrom={1}
         arrows={false}
         autoPlay={true}
-        autoPlaySpeed={5000}
+        autoPlaySpeed={7500}
         centerMode={false}
         className=""
         containerClass="container"
