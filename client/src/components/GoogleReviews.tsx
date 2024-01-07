@@ -30,9 +30,9 @@ const ReviewsContainer = styled.div`
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap:1rem;
+  padding:1rem;
   @media screen and (max-width:768px) {
     grid-template-columns: 1fr;
-    padding:1rem;
   }
 `
 const ReviewContainer = styled.div`

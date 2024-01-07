@@ -6,10 +6,12 @@ const FooterContainer = styled.footer`
   background-color: #212121;
   padding: 1rem;
   box-sizing: border-box;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
   /* laptop & desktop screens */
   @media screen and (min-width: 1024px) {
-    display: flex;
-    gap: 1rem;
+    flex-direction: row;
     justify-content: space-between;
     padding: 2rem 6rem;
   }
@@ -21,7 +23,6 @@ const FooterContainer = styled.footer`
       "location link"
       /* git is short for get in touch */
       "git git";
-    gap: 1rem;
   }
 `;
 
