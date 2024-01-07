@@ -57,6 +57,13 @@ const StyledNavLink = styled(NavLink)`
     transition: color 0.5s ease-out;
     color: #f9b698;
   }
+
+  &.active {
+    color: #f9b698;
+    &:after {
+      background-color: #f9b698;
+    }
+  }
 `;
 
 const BookButton = styled.button`

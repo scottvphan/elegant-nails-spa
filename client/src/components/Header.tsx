@@ -102,8 +102,8 @@ const BookButton = styled.button`
   color: white;
   background-color: #f9b698;
   padding: 0.5rem 1rem;
-  display:none;
-  @media screen and (max-width:768px) {
+  display: none;
+  @media screen and (max-width: 768px) {
     display: block;
   }
 `;
@@ -112,32 +112,28 @@ export const Header = ({
   setIsHamburgerOpen,
   setIsAppointmentOpen,
 }: HeaderProps) => {
-
   const handleAppointmentModal = () => {
     setIsAppointmentOpen((prevState: boolean) => !prevState);
   };
 
   return (
     <>
-      {/* Non-sticky part */}
-      <StoreInfoContainer>
-        <ScheduleText>
-          <StyledIcon src={ClockIcon} />
-          Mon - Fri 9:30AM - 7:00PM / Saturday 9:00AM - 6PM
-        </ScheduleText>
-        <StoreInfoLink href="Tel: 6103284340">
-          <StyledIcon src={PhoneIcon} />
-          (610) 328-4340
-        </StoreInfoLink>
-        <LocationText>
-          <StyledIcon src={LocationIcon} />
-          407 Baltimore Pike, Morton, PA 19070
-        </LocationText>
-        <StyledIcon style={{ marginLeft: "auto" }} src={FacebookIcon} />
-      </StoreInfoContainer>
-
-      {/* Sticky navbar */}
       <StickyContainer>
+        <StoreInfoContainer>
+          <ScheduleText>
+            <StyledIcon src={ClockIcon} />
+            Mon - Fri 9:30AM - 7:00PM / Saturday 9:00AM - 6PM
+          </ScheduleText>
+          <StoreInfoLink href="Tel: 6103284340">
+            <StyledIcon src={PhoneIcon} />
+            (610) 328-4340
+          </StoreInfoLink>
+          <LocationText>
+            <StyledIcon src={LocationIcon} />
+            407 Baltimore Pike, Morton, PA 19070
+          </LocationText>
+          <StyledIcon style={{ marginLeft: "auto" }} src={FacebookIcon} />
+        </StoreInfoContainer>
         <NavbarContainer>
           <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
           <StoreLogo to={"/"}>
