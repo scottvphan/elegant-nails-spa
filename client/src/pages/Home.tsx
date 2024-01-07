@@ -51,7 +51,6 @@ const HeroSection = styled.div`
 const DarkContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   width: 75%;
-  height: 100%;
   padding: 1rem;
 `;
 

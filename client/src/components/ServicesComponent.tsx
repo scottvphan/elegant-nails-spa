@@ -36,6 +36,10 @@ const ServiceContainer = styled.div`
 const ServiceName = styled.p`
   font-size: 1rem;
   text-transform: uppercase;
+
+  @media screen and (max-width: 540px) {
+    font-size: 0.75rem;
+  }
 `;
 const ServicePrice = styled.h6`
   font-size: 1rem;
