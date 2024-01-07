@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Dispatch, SetStateAction } from "react";
@@ -14,20 +14,20 @@ const NavbarContainer = styled.div`
   }
 `;
 
-const ServicesContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-`;
+// const ServicesContainer = styled.div`
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+// `;
 
-const ServicesDropdown = styled.div`
-  position: absolute;
-  padding: 1rem;
-  background-color: #e3e3e3;
-  flex-direction: column;
-  gap: 0.5rem;
-  top: 2.75rem;
-`;
+// const ServicesDropdown = styled.div`
+//   position: absolute;
+//   padding: 1rem;
+//   background-color: #e3e3e3;
+//   flex-direction: column;
+//   gap: 0.5rem;
+//   top: 2.75rem;
+// `;
 
 const StyledNavLink = styled(NavLink)`
   color: #323232;
@@ -66,21 +66,21 @@ const BookButton = styled.button`
   padding: 0.3125rem 1.375rem;
 `;
 
-const DropdownItem = styled(NavLink)`
-  color: black;
-  text-decoration: none;
+// const DropdownItem = styled(NavLink)`
+//   color: black;
+//   text-decoration: none;
 
-  &:hover {
-    color: #f9b698;
-  }
-`;
+//   &:hover {
+//     color: #f9b698;
+//   }
+// `;
 
 interface HeaderProps {
   setIsAppointmentOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleAppointmentModal = () => {
     setIsAppointmentOpen((prevState: boolean) => !prevState);
@@ -89,10 +89,10 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
   return (
     <NavbarContainer>
       <StyledNavLink to="/">HOME</StyledNavLink>
-      <ServicesContainer
+      {/* <ServicesContainer
         onMouseOver={() => setDropdownOpen(true)}
         onMouseOut={() => setDropdownOpen(false)}
-      >
+      > */}
         <StyledNavLink to="/services">SERVICES</StyledNavLink>
         {/* <ServicesDropdown
           style={{ display: `${dropdownOpen ? "flex" : "none"}` }}
@@ -113,7 +113,7 @@ export const Navbar = ({ setIsAppointmentOpen }: HeaderProps) => {
             ADDITIONAL SERVICES
           </DropdownItem>
         </ServicesDropdown> */}
-      </ServicesContainer>
+      {/* </ServicesContainer> */}
       <StyledNavLink to="/contact">CONTACT</StyledNavLink>
       <BookButton onClick={handleAppointmentModal}>BOOK NOW</BookButton>
     </NavbarContainer>
