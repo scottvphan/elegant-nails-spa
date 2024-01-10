@@ -97,7 +97,7 @@ export const Contact = () => {
           Need to get in contact with us?
         </Heading>
         <TextContent>
-          Call us at the phone number below or fill out the form to send us any messages or questiongs you may have.
+          Call us at the phone number below or fill out the form to send us any messages or questions you may have.
         </TextContent>
         <ContactInfo>
           Phone: (610) 328-4340

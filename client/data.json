@@ -17,7 +17,7 @@
       ]
     },
     {
-      "name": "Nail Polish",
+      "name": "Nail Polish Change",
       "options": [
         {
           "price": 10
@@ -73,15 +73,31 @@
       ]
     },
     {
-      "name": "Acrylic Takeoff",
+      "name": "Acrylic Take Off and Manicure",
       "options": [
         {
-          "price": 30
+          "price": 25
         }
       ]
     }
   ],
   "pedicure": [
+    {
+      "name": "Nail Polish Change (Toes)",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Gel Polish Change (Toes)",
+      "options": [
+        {
+          "price": 25
+        }
+      ]
+    },
     {
       "name": "Pedicure",
       "options": [
@@ -113,38 +129,14 @@
           "price": 65
         }
       ]
-    },
-    {
-      "name": "Nail Polish",
-      "options": [
-        {
-          "price": 15
-        }
-      ]
-    },
-    {
-      "name": "Gel Polish",
-      "options": [
-        {
-          "price": 25
-        }
-      ]
     }
   ],
   "waxing": [
     {
-      "name": "Eyebrows",
-      "options": [
-        {
-          "price": 8
-        }
-      ]
-    },
-    {
       "name": "Chin",
       "options": [
         {
-          "price": 8
+          "price": 10
         }
       ]
     },
@@ -157,15 +149,15 @@
       ]
     },
     {
-      "name": "Half Legs",
+      "name": "Eyebrows",
       "options": [
         {
-          "price": 35
+          "price": 10
         }
       ]
     },
     {
-      "name": "Underarms",
+      "name": "Side Burn",
       "options": [
         {
           "price": 15
@@ -173,7 +165,7 @@
       ]
     },
     {
-      "name": "Full Arms",
+      "name": "Half Legs",
       "options": [
         {
           "price": 35
@@ -185,6 +177,54 @@
       "options": [
         {
           "price": 60
+        }
+      ]
+    },
+    {
+      "name": "Half Arm",
+      "options": [
+        {
+          "price": 30
+        }
+      ]
+    },
+    {
+      "name": "Full Arms",
+      "options": [
+        {
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Underarms",
+      "options": [
+        {
+          "price": 20
+        }
+      ]
+    },
+    {
+      "name": "Back",
+      "options": [
+        {
+          "price": 50
+        }
+      ]
+    },
+    {
+      "name": "Bikini",
+      "options": [
+        {
+          "price": 35
+        }
+      ]
+    },
+    {
+      "name": "Brazilian",
+      "options": [
+        {
+          "price": 55
         }
       ]
     }
@@ -257,7 +297,7 @@
   ],
   "additional services": [
     {
-      "name": "Takeoff New Set",
+      "name": "Take Off New Set",
       "options": [
         {
           "price": 40
@@ -301,6 +341,38 @@
       "options": [
         {
           "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Shape/Length (Almond, Coffin, etc.)",
+      "options": [
+        {
+          "price": 5
+        }
+      ]
+    },
+    {
+      "name": "Chrome",
+      "options": [
+        {
+          "price": 15
+        }
+      ]
+    },
+    {
+      "name": "Acrylic on Big Toe",
+      "options": [
+        {
+          "price": 5
+        }
+      ]
+    },
+    {
+      "name": "Acrylic Toe Fill",
+      "options": [
+        {
+          "price": 3
         }
       ]
     }

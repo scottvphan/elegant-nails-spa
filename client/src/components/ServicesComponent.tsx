@@ -60,7 +60,7 @@ export const ServicesComponent = (data: DataPropsType) => {
     <>
         <ServiceContainer>
           <ServiceName>{data.name}</ServiceName>
-          <ServicePrice>${data.options[0].price}</ServicePrice>
+          <ServicePrice>${data.options[0].price}+</ServicePrice>
         </ServiceContainer>
     </>
   );
