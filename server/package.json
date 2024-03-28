@@ -17,6 +17,7 @@
     "ts-node": "^10.9.2"
   },
   "scripts": {
-    "server": "nodemon server.ts"
+    "server": "nodemon server.ts",
+    "build": "npm i"
   }
 }
