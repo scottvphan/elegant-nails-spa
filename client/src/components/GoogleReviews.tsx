@@ -30,9 +30,9 @@ const ReviewsContainer = styled.div`
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap:1rem;
+  padding:1rem;
   @media screen and (max-width:768px) {
     grid-template-columns: 1fr;
-    padding:1rem;
   }
 `
 const ReviewContainer = styled.div`
@@ -57,7 +57,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
           setGoogleReviews(JSON.parse(storedReviews));
         } else {
           const response = await axios.get(
-            "http://localhost:4000/google-reviews"
+            "https://elegant-nails-spa.onrender.com/google-reviews"
           );
           let reviews: Review[] = response.data.reviews || [];
 

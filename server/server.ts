@@ -2,6 +2,7 @@
 import express, { Request, Response } from "express";
 import axios from "axios";
 import dotenv from "dotenv";
+import serverless from "serverless-http"
 
 dotenv.config();
 
@@ -41,3 +42,5 @@ app.get("/google-reviews", async (req: Request, res: Response) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports.handler = serverless(app)
