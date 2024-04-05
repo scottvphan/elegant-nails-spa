@@ -40,13 +40,13 @@ const StyledForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #f8f8f8;
+  background-color: #eeeeee;
   padding: 1rem;
   gap: 1rem;
 `
 
 const StyledLabel = styled.label`
-    
+  
 `
 
 const StyledButton = styled.button`

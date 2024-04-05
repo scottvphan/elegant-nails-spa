@@ -57,7 +57,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
           setGoogleReviews(JSON.parse(storedReviews));
         } else {
           const response = await axios.get(
-            "https://elegant-nails-spa.onrender.com/google-reviews"
+            "https://elegant-nails-spa-aqgh.onrender.com/google-reviews"
           );
           let reviews: Review[] = response.data.reviews || [];
 
