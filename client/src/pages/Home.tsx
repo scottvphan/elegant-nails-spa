@@ -52,12 +52,21 @@ const DarkContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   width: 75%;
   padding: 1rem;
+
+  @media screen and (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 const Heading = styled.p`
   font-size: 4rem;
+
   @media screen and (max-width: 540px) {
-    font-size:2rem;
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 540px) {
+    font-size: 3rem;
   }
 `;
 
@@ -82,6 +91,7 @@ const WelcomeMessage = styled.p`
   margin: 0 auto;
   font-size: 1.5rem;
   color: #757575;
+  padding: 1rem;
   @media screen and (max-width: 540px) {
     font-size:1rem;
   }

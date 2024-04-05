@@ -64,7 +64,7 @@ export const GoogleReviewsCard = (review: any) => {
   };
 
   return (
-    <ReviewsLink to={authorAttribution.uri}>
+    <ReviewsLink to={authorAttribution.uri} target="_blank">
       <ReviewsContainer>
         <UserImg src={authorAttribution.photoUri} alt="User Avatar" />
         <UserName>{authorAttribution.displayName}</UserName>

@@ -14,21 +14,24 @@ const MobileNavbarContainer = styled.div`
   padding: 1rem;
   box-sizing: border-box;
   display: none;
-  @media screen and (max-width: 768px) {
-    display: flex;
-    gap: 2rem;
-  }
   height: 100vh;
   width: 100vw;
   position: fixed;
   justify-content: space-between;
   overflow-y: auto;
   z-index: 10000;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    gap: 2rem;
+  }
+
+  transition: top 0.5s ease;
 `;
 
 const StyledNavLink = styled(NavLink)`
   color: white;
-  text-decoration: 0;
+  text-decoration: none;
   font-size: 1.5rem;
   &:hover {
     color: #f9b698;

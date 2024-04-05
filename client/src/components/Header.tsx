@@ -31,8 +31,8 @@ const NavbarContainer = styled.div`
   @media screen and (min-width: 1024px) {
     display: flex;
     gap: 1rem;
-    justify-content: space-between;
     padding: 2rem 6rem;
+    justify-content: center;
   }
 `;
 
@@ -87,6 +87,9 @@ const StoreLogo = styled(NavLink)`
   text-decoration: none;
   font-size: 2rem;
   color: black;
+  display: flex;
+  align-items: center;
+  
   @media screen and (max-width:768px) {
     width:40%;
   }
