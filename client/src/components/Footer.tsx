@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import FacebookIcon from "../assets/logo/facebook.svg"
+// import FacebookIcon from "../assets/logo/facebook.svg"
 
 const FooterContainer = styled.footer`
   background-color: #212121;
@@ -97,10 +97,6 @@ const GetInTouchContainer = styled.div`
   gap:1rem;
 `;
 
-const StyledIcon = styled.img`
-  width: 1.5rem;
-`
-
 const CopyrightContainer = styled.div`
   width: 100%;
   background: #1C1C1C;
@@ -145,13 +141,13 @@ export const Footer = () => {
           </LinkContainer>
         </LinksContainer>
         <GetInTouchContainer>
-          <FooterHeading>Get In Touch</FooterHeading>
-          <StyledNavLink
+          <FooterHeading>Directions</FooterHeading>
+          {/* <StyledNavLink
             to={"https://m.facebook.com/profile.php?id=155017304535547"}
           >
             <StyledIcon src={FacebookIcon} />
             Facebook
-          </StyledNavLink>
+          </StyledNavLink> */}
           <StyledGoogleMap
             loading="lazy"
             // allowfullscreen

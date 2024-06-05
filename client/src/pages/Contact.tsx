@@ -1,6 +1,7 @@
-import { FormEvent } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import styled from "styled-components"
 import emailjs from "@emailjs/browser"
+import { NavLink } from "react-router-dom"
 
 const ContactContainer = styled.div`
   display: flex;
@@ -68,7 +69,59 @@ const StyledTextArea = styled.textarea`
   border: 0;
 `
 
+const RedText = styled.span`
+  color: red;
+`
+
+const CompleteModalBG = styled.div`
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+`
+
+const CompleteModal = styled.div`
+  background-color: white;
+  height: 50%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  @media screen and (max-width: 540px) {
+    width: 100%;
+    height: 100%;
+  }
+`
+
+const ModalText = styled.p`
+  max-width: 45rem;
+  font-size: 1.25rem;
+  text-align: center;
+`
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+  background-color: #f9b698;
+  padding: 1rem;
+  border-radius: 1rem;
+`
+
 export const Contact = () => {
+  const [modalOpen, setModalOpen] = useState(false)
+  const [name, setName] = useState("")
 
   function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -88,7 +141,13 @@ export const Contact = () => {
           console.log(error.text);
         }
       );
+
+    setModalOpen(() => !modalOpen)
   };
+
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
+    setName(e.target.value)
+  }
 
   return (
     <ContactContainer>
@@ -107,14 +166,29 @@ export const Contact = () => {
         </ContactInfo>
       </TextContainer>
       <StyledForm id={"form"} onSubmit={(e) => handleFormSubmit(e)}>
-        <StyledLabel>Name</StyledLabel>
-        <StyledInput type="text" name="from_name"/>
-        <StyledLabel>Email</StyledLabel>
+        <StyledLabel>
+          Full Name
+          <RedText>*</RedText>
+        </StyledLabel>
+        <StyledInput type="text" name="from_name" onChange={(e) => handleNameChange(e)}/>
+        <StyledLabel>
+          Email
+          <RedText>*</RedText>
+        </StyledLabel>
         <StyledInput type="email" name="from_email"/>
-        <StyledLabel>Message</StyledLabel>
+        <StyledLabel>
+          Message
+          <RedText>*</RedText>
+        </StyledLabel>
         <StyledTextArea name="message" rows={5}/>
         <StyledButton>Submit Form</StyledButton>
       </StyledForm>
+      <CompleteModalBG style={{ display: `${modalOpen ? "flex" : "none"}`}}>
+        <CompleteModal>
+          <ModalText>Thank you {name} for contacting us! We hope to see you soon and we will reach back as soon as possible.</ModalText>
+          <StyledNavLink to={"/"}>Return Home</StyledNavLink>
+        </CompleteModal>
+      </CompleteModalBG>
     </ContactContainer>
   )
 }
