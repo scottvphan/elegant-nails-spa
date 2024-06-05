@@ -293,7 +293,7 @@ export const Home = () => {
             showDots={false}
             slidesToSlide={1}
             swipeable
-            >
+          >
             <ImgContainer>
               <StyledImg src={NailsOne} />
             </ImgContainer>

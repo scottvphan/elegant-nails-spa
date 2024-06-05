@@ -13,20 +13,38 @@ const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   overflow-y: scroll;
   border-radius: 0.5rem;
+
   @media screen and (max-width: 768px) {
-    min-width: 90%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 0 0 0 1rem;
+    max-height: 100%;
+    border-radius: 0;
   }
 `;
+
+const StyledIframe = styled.iframe`
+  width: 100%;
+  min-height: 800px;
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  ::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+`;
+
 export default function AppointmentModal() {
   return (
     <ModalContainer>
-      <iframe
+      <StyledIframe
         src="https://app.acuityscheduling.com/schedule.php?owner=31168246"
         title="Schedule Appointment"
-        width="100%"
-        height="800"
         frameBorder="0"
-      ></iframe>
+      ></StyledIframe>
       <script
         src="https://embed.acuityscheduling.com/js/embed.js"
         type="text/javascript"

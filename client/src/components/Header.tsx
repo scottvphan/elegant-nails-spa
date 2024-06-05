@@ -7,7 +7,7 @@ import CompanyLogo from "../assets/logo/company-logo.png";
 import PhoneIcon from "/icons/phone.svg";
 import ClockIcon from "/icons/clock.svg";
 import LocationIcon from "/icons/location.svg";
-import FacebookIcon from "../assets/logo/facebook.svg";
+// import FacebookIcon from "../assets/logo/facebook.svg";
 
 interface HeaderProps {
   setIsHamburgerOpen: Dispatch<SetStateAction<boolean>>;
@@ -41,6 +41,7 @@ const StoreInfoContainer = styled.div`
   background-color: #f8f8f8;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   gap: 1rem;
   z-index: 9998;
   color: #9a9a9a;
@@ -148,7 +149,6 @@ export const Header = ({
             <StyledIcon src={LocationIcon} />
             407 Baltimore Pike, Morton, PA 19070
           </LocationText>
-          <StyledIcon style={{ marginLeft: "auto" }} src={FacebookIcon} />
         </StoreInfoContainer>
         <NavbarContainer>
           <HamburgerMenu setIsHamburgerOpen={setIsHamburgerOpen} />
