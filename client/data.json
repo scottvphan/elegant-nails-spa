@@ -4,7 +4,7 @@
       "name": "Manicure",
       "options": [
         {
-          "price": 15
+          "price": 20
         }
       ]
     },
@@ -102,7 +102,7 @@
       "name": "Pedicure",
       "options": [
         {
-          "price": 30
+          "price": 35
         }
       ]
     },

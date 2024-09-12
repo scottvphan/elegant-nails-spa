@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
-import FacebookIcon from "../assets/logo/facebook.svg";
+// import FacebookIcon from "../assets/logo/facebook.svg";
 
 interface HeaderProps {
   setIsHamburgerOpen: Dispatch<SetStateAction<boolean>>;
@@ -43,9 +43,9 @@ const LinkContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
 `;
-const GetInTouchContainer = styled.div`
-  margin: 1rem 0;
-`;
+// const GetInTouchContainer = styled.div`
+//   margin: 1rem 0;
+// `;
 const Heading = styled.h1`
   color: #fff;
   font-family: Jost;
@@ -54,22 +54,22 @@ const Heading = styled.h1`
   font-weight: 400;
   line-height: 44px;
 `;
-const FacebookContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// const FacebookContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 const CloseButton = styled.div`
   font-weight: 400;
   font-size: 2rem;
   text-align: right;
 `;
-const FacebookText = styled.p`
-  color: #fff;
-  font-family: Jost;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-`;
+// const FacebookText = styled.p`
+//   color: #fff;
+//   font-family: Jost;
+//   font-size: 36px;
+//   font-style: normal;
+//   font-weight: 400;
+// `;
 const LocationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -105,13 +105,13 @@ export const MobileNavbar = ({ setIsHamburgerOpen }: HeaderProps) => {
           Contact
         </StyledNavLink>
       </LinkContainer>
-      <GetInTouchContainer>
+      {/* <GetInTouchContainer>
         <Heading>GET IN TOUCH</Heading>
         <FacebookContainer>
           <img style={{ width: "2rem" }} src={FacebookIcon} />
           <FacebookText>Facebook</FacebookText>
         </FacebookContainer>
-      </GetInTouchContainer>
+      </GetInTouchContainer> */}
       <LocationContainer>
         <NavAddress>
           407 Baltimore Pike <br />
