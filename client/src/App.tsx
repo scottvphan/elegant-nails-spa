@@ -21,7 +21,6 @@ function App() {
     html,
     body,
     :root {
-
         font-family:'Jost', Arial, Helvetica, sans-serif;
         scroll-behavior: smooth;
     }
