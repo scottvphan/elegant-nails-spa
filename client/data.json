@@ -110,7 +110,7 @@
       "name": "Pedicure with Gel Polish",
       "options": [
         {
-          "price": 45
+          "price": 50
         }
       ]
     },
@@ -126,7 +126,7 @@
       "name": "Spa Pedicure and Manicure",
       "options": [
         {
-          "price": 65
+          "price": 70
         }
       ]
     }
@@ -144,7 +144,7 @@
       "name": "Lip",
       "options": [
         {
-          "price": 7
+          "price": 8
         }
       ]
     },
